@@ -1,6 +1,6 @@
 import React from "react"
-import Header from "../components/Header"
-import MyCVs from "../components/MyCVs"
+import Header from "../Header"
+import MyCVs from "../MyCVs"
 
 const Homepage = () => {
   return <div>
