@@ -34,3 +34,18 @@
  font-size: 20px;
  font-family: lato;
 }
+
+.normal-text {
+ font-size: 16px;
+ color: #475367;
+ font-family: Poppins;
+ font-weight: 300;
+ padding-top: 8px;
+}
+
+.upper-input-container {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+}
+
