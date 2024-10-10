@@ -10,11 +10,11 @@ import CoverLetter from "./components/pages/CoverLetter"
 function App() {
  return (
   <div className="w-full mx-auto flex items-center justify-center">
-     {/* <Homepage /> */}
-     {/* <ChoosePaymentMethods /> */}
-       {/* <GenerateCV /> */}
-       {/* <DowngradePopup /> */}
-       <CoverLetter />
+   <Homepage />
+   {/* <ChoosePaymentMethods /> */}
+   {/* <GenerateCV /> */}
+   {/* <DowngradePopup /> */}
+   {/* <CoverLetter /> */}
   </div>
  )
 }

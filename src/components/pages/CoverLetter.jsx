@@ -7,7 +7,7 @@ const CoverLetter = () => {
  const [value, setValue] = useState("")
 
  return (
-  <main className="flex flex-row gap-[130px]">
+  <main className="flex flex-col md:flex-row gap-[50px] md:gap-[130px]">
    <section>
     <header className="flex flex-row mx-auto justify-between w-full mb-[48px]">
      <div className="flex flex-col">
@@ -23,7 +23,7 @@ const CoverLetter = () => {
      <header className="flex flex-row justify-between">
       <h5 className="font-lato font-bold text-2xl">Personal details</h5>
       <div className="flex flex-row text-primary align-middle items-center">
-       <img className="text-primary " src={AISparkle} alt="" />
+       <img className="text-primary" src={AISparkle} alt="" />
        <p className="whitespace-nowrap  border-b-primary border-b-[1px]">
         Generate Cover Letter
        </p>
@@ -86,7 +86,7 @@ const CoverLetter = () => {
      </button>
     </div>
    </section>
-   <section className="border-[1px] border-blue-300 w-[595px]"></section>
+   <section className="border-[1px] border-[#d0d5dd] w-[595px]"></section>
   </main>
  )
 }
