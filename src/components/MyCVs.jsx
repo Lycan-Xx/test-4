@@ -41,7 +41,9 @@ const MyCVs = () => {
     </section>
     <article className="flex flex-col bg-gray-100 mt-[32px] rounded-2xl py-[24px] px-[32px]">
      <header className="flex flex-row w-full justify-between pb-4">
-      <h5 className="text-base font-bold">Choose from top rated templates.</h5>
+      <h5 className="text-[24px] font-bold">
+       Choose from top rated templates.
+      </h5>
       <i className="flex flex-row items-center text-primary gap-1 hover:cursor-pointer">
        View all <HiArrowRight />{" "}
       </i>
