@@ -47,7 +47,7 @@ const Templates = () => {
      {filteredTemplates.map((item) => {
       return (
        <div className="relative" key={item.id}>
-        {item.toprated && <img key={item.id} src={item.template} alt="" />}
+        <img key={item.id} src={item.template} alt="" />
         {item.premium && (
          <img className="absolute top-0 left-0" src={PremiumCrown} alt="" />
         )}
