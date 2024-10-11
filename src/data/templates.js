@@ -14,7 +14,7 @@ import pTemplate8 from "../assets/Templates/pTemplate8.svg"
 import pTemplate9 from "../assets/Templates/pTemplate9.svg"
 import pTemplate10 from "../assets/Templates/pTemplate10.svg"
 
-export const Templates = [
+export const AllTemplates = [
  {
   id: 1,
   template: Template1,

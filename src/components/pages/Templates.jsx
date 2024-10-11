@@ -1,7 +1,22 @@
-import React from "react"
+import React, { useState } from "react"
 import TopRatedTemplates from "../TopRatedTemplates"
+import { AllTemplates } from "../../data/templates"
+import PremiumCrown from "../../assets/PremiumCrown.svg"
 
 const Templates = () => {
+ const [activeCV, setActiveCV] = useState("All")
+
+ const handleButtonClick = (btn) => {
+  setActiveCV(btn)
+ }
+
+ const filteredTemplates = AllTemplates.filter((item) => {
+  if (activeCV === "All") return true
+  if (activeCV === "Free") return !item.premium
+  if (activeCV === "Premium") return item.premium
+  return true
+ })
+
  return (
   <section className="flex flex-col">
    <header>
@@ -20,8 +35,27 @@ const Templates = () => {
      </i> */}
     </header>
     <TopRatedTemplates />
-     </article>{" "}
-     
+   </article>{" "}
+   {/* All Free Premuim Templates  */}
+   <section className="flex flex-col gap-6">
+    <header className="flex flex-row gap-3">
+     <button onClick={() => handleButtonClick("All")}>All</button>
+     <button onClick={() => handleButtonClick("Free")}>Free</button>
+     <button onClick={() => handleButtonClick("Premium")}>Premium</button>{" "}
+    </header>
+    <section className=" grid grid-cols-4 gap-16">
+     {filteredTemplates.map((item) => {
+      return (
+       <div className="relative" key={item.id}>
+        {item.toprated && <img key={item.id} src={item.template} alt="" />}
+        {item.premium && (
+         <img className="absolute top-0 left-0" src={PremiumCrown} alt="" />
+        )}
+       </div>
+      )
+     })}
+    </section>
+   </section>
   </section>
  )
 }
