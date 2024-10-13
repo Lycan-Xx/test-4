@@ -7,6 +7,7 @@ import GenerateCV from "./components/PopUps/GenerateCV"
 import DowngradePopup from "./components/PopUps/DowngradePopup"
 import CoverLetter from "./components/pages/CoverLetter"
 import Templates from "./components/pages/Templates"
+import SideNav from "./components/SideNav"
 
 function App() {
  return (
@@ -16,7 +17,8 @@ function App() {
    {/* <GenerateCV /> */}
    {/* <DowngradePopup /> */}
    {/* <CoverLetter /> */}
-   <Templates />
+   {/* <Templates /> */}
+   <SideNav />
   </div>
  )
 }
