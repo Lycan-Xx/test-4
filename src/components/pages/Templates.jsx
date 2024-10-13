@@ -10,6 +10,21 @@ const Templates = () => {
   setActiveCV(btn)
  }
 
+ const tabNames = [
+  {
+   id: 1,
+   name: "All",
+  },
+  {
+   id: 2,
+   name: "Free",
+  },
+  {
+   id: 3,
+   name: "Premium",
+  },
+ ]
+
  const filteredTemplates = AllTemplates.filter((item) => {
   if (activeCV === "All") return true
   if (activeCV === "Free") return !item.premium
@@ -37,11 +52,23 @@ const Templates = () => {
     <TopRatedTemplates />
    </article>{" "}
    {/* All Free Premuim Templates  */}
-   <section className="flex flex-col gap-6">
+   <section className="flex flex-col gap-6 pt-[40px]">
     <header className="flex flex-row gap-3">
-     <button onClick={() => handleButtonClick("All")}>All</button>
-     <button onClick={() => handleButtonClick("Free")}>Free</button>
-     <button onClick={() => handleButtonClick("Premium")}>Premium</button>{" "}
+     {tabNames.map((item) => {
+      return (
+       <buttom
+        className={`cursor-pointer px-[42px] py-[12px] rounded-[26px] ${
+         activeCV === item.name
+          ? "bg-primary text-white"
+          : "bg-gray-200 text-black"
+        }`}
+        onClick={() => handleButtonClick(item.name)}
+        key={item.id}
+       >
+        {item.name}
+       </buttom>
+      )
+     })}
     </header>
     <section className=" grid grid-cols-4 gap-16">
      {filteredTemplates.map((item) => {
