@@ -3,7 +3,11 @@ import Flutterwave from "../assets/flutterwave.svg"
 import Interswitch from "../assets/interswitch.svg"
 import Remita from "../assets/remita.svg"
 
-
+import DashboardIcon from "../assets/DashboardIcon.svg"
+import SettingsIcon from "../assets/SettingsIcon.svg"
+import LogOutIcon from "../assets/LogOutIcon.svg"
+import Crown from "../assets/crown.svg"
+import ProfilePic from "../assets/X.svg"
 
 // export const ceevies = [
 //  {
@@ -44,5 +48,38 @@ export const paymentOptions = [
   id: 4,
   image: Remita,
   gateway: "Remita",
+ },
+]
+
+export const links = [
+ {
+  id: 1,
+  url: "/",
+  text: "home",
+  icon: <DashboardIcon />,
+ },
+ {
+  id: 2,
+  url: "/team",
+  text: "team",
+  icon: <SettingsIcon />,
+ },
+ {
+  id: 3,
+  url: "/projects",
+  text: "projects",
+  icon: <LogOutIcon />,
+ },
+ {
+  id: 4,
+  url: "/calendar",
+  text: "calendar",
+  icon: <Crown />,
+ },
+ {
+  id: 5,
+  url: "/documents",
+  text: "documents",
+  icon: <ProfilePic />,
  },
 ]
