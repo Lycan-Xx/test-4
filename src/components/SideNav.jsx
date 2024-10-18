@@ -1,47 +1,71 @@
 import React, { useState } from "react"
 import DoubleArrowRight from "../assets/DoubleArrowRight.svg"
 import logo from "../assets/LogoBeeCV.svg"
-import DashboardIcon from "../assets/DashboardIcon.svg"
-import SettingsIcon from "../assets/SettingsIcon.svg"
-import LogOutIcon from "../assets/LogOutIcon.svg"
-import crown from "../assets/crown.svg"
-import ProfilePic from "../assets/X.svg"
-// import { useGlobalContext } from "./context";
+// import { useGlobalContext } from "../context.jsx"
+
+import { links } from "../data/data"
 
 const SideNav = () => {
- const [collapsed, setCollapsed] = useState(true)
+ //  const { isSidebarOpen, closeSidebar } = useGlobalContext()
 
- const handleArrowClick = () => {
-  setCollapsed(!collapsed)
- }
+ const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+
+ //  const closeSidebar = () => {
+ //   setIsSidebarOpen(false)
+ //  }
 
  return (
   <aside className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}`}>
    <div className="sidebar-header">
-    <img src={logo} className="logo" alt="coding addict" />
-    <button className="close-btn" onClick={closeSidebar}>
-     <FaTimes />
+    <img src={logo} className="logo" alt="" />
+    <button className="close-btn">
+     <img src={DoubleArrowRight} alt="" />
     </button>
    </div>
    <ul className="links">
-    {links.map((link) => {
+    {links.slice(0, 2).map((link) => {
      const { id, url, text, icon } = link
      return (
-      <li key={id}>
-       <a href={url}>
-        {icon}
+      <li key={id + 1}>
+       <a
+        className="flex flex-row h-[100%] items-center justify-center w-[100%] mx-auto "
+        href={url}
+       >
+        <img src={icon} alt="" />
         {text}
        </a>
       </li>
      )
     })}
    </ul>
-   <ul className="social-icons">
-    {social.map((link) => {
-     const { id, url, icon } = link
+   <ul className="links">
+    {links.slice(2, 5).map((link) => {
+     const { id, url, text, icon } = link
      return (
-      <li key={id}>
-       <a href={url}>{icon}</a>
+      <li key={id + 3}>
+       <a
+        className="flex flex-row h-[100%] items-center justify-center w-[100%] mx-auto "
+        href={url}
+       >
+        <img src={icon} alt="" />
+        {text}
+       </a>
+      </li>
+     )
+    })}
+   </ul>
+   <ul className="links">
+    {links.slice(5, 6).map((link) => {
+     const { id, url, text, icon } = link
+     return (
+      <li key={6}>
+       <a
+        className="flex flex-row h-[100%] items-center justify-center w-[100%] mx-auto "
+        href={url}
+       >
+        <img src={icon} alt="" />
+        {text}
+       </a>
       </li>
      )
     })}

@@ -24,9 +24,12 @@ const MyCVs = () => {
       Select a template to build your CV.
      </p>
     </div>
-    <button className="md:w-[260px] md:h-[68px] rounded-[40px]  bg-primary flex flex-row justify-center items-center">
+    <button className="md:w-[260px] md:h-[68px] rounded-[40px] bg-primary flex flex-row justify-center items-center">
      <img className="w-[24px] h-[24px]" src={Crown} alt="" />
-     <p className="text-white text-[24px] font-bold ml-[8px]"> Upgrade Now </p>
+     <p className="text-white text-[24px] font-bold ml-[8px] font-lato">
+      {" "}
+      Upgrade Now{" "}
+     </p>
     </button>
    </header>
    {/* CVs / Cover Letters Tabs */}
