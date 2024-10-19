@@ -94,25 +94,24 @@ export const links = [
 export const paymentHistory = [
  {
   id: 1,
-  paymentID: "06c1774-7f3d-46ad...90a8",
+  paymentID: " 06c1774-7f3d-46ad...90a8",
   paymentStatus: true,
   Amount: "35",
   cardType: "Visa",
   cardNumber: "1234 5678 9234 2341",
-    time: {
-   date: "12",
+  time: {
    month: "Mar",
    year: "2022",
    hour: "12:43",
-   AM: false,
+   AM: true,
   },
  },
  {
   id: 2,
-  paymentID: "06c1774-7f3d-46ad...90a8",
-  paymentStatus: false,
+  paymentID: " 06c1774-7f3d-46ad...90a8",
+  paymentStatus: true,
   Amount: "35",
-  cardType: "Mastercard",
+  cardType: "MasterCard",
   cardNumber: "1234 5678 9234 2341",
   time: {
    month: "Mar",
@@ -138,7 +137,7 @@ export const paymentHistory = [
  {
   id: 4,
   paymentID: "06c1774-7f3d-46ad...90a8",
-  paymentStatus: false,
+  paymentStatus: true,
   Amount: "35",
   cardType: "MasterCard",
   cardNumber: "1234 5678 9234 2341",
@@ -152,7 +151,7 @@ export const paymentHistory = [
  {
   id: 5,
   paymentID: "06c1774-7f3d-46ad...90a8",
-  paymentStatus: false,
+  paymentStatus: true,
   Amount: "35",
   cardType: "Visa",
   cardNumber: "1234 5678 9234 2341",
@@ -165,6 +164,20 @@ export const paymentHistory = [
  },
  {
   id: 6,
+  paymentID: "06c1774-7f3d-46ad...90a8",
+  paymentStatus: false,
+  Amount: "35",
+  cardType: "MasterCard",
+  cardNumber: "1234 5678 9234 2341",
+  time: {
+   month: "Mar",
+   year: "2022",
+   hour: "12:43",
+   AM: true,
+  },
+ },
+ {
+  id: 7,
   paymentID: "06c1774-7f3d-46ad...90a8",
   paymentStatus: false,
   Amount: "35",
