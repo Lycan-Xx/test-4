@@ -9,6 +9,7 @@ import CoverLetter from "./components/pages/CoverLetter"
 import Templates from "./components/pages/Templates"
 import SideNav from "./components/SideNav"
 import PaymentHistory from "./components/pages/PaymentHistory"
+import CreateCVNav from "./components/CreateCVNav"
 
 function App() {
  return (
@@ -19,8 +20,9 @@ function App() {
    {/* <DowngradePopup /> */}
    {/* <CoverLetter /> */}
    {/* <Templates /> */}
-     {/* <SideNav /> */}
-     <PaymentHistory />
+   {/* <SideNav /> */}
+   {/* <PaymentHistory /> */}
+   <CreateCVNav />
   </div>
  )
 }

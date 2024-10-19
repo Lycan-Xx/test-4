@@ -40,7 +40,6 @@ const PaymentHistoryList = () => {
  const [searchTerm, setSearchTerm] = useState("")
  const itemsPerPage = 5
 
- // Filter the payment history based on the search term
  const filteredItems = paymentHistory.filter(
   (item) =>
    item.paymentID.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -48,10 +47,8 @@ const PaymentHistoryList = () => {
    item.Amount.toString().includes(searchTerm)
  )
 
- // Calculate total pages based on filtered items
  const totalPages = Math.ceil(filteredItems.length / itemsPerPage)
 
- // Calculate indices for slicing the filtered items
  const indexOfLastItem = currentPage * itemsPerPage
  const indexOfFirstItem = indexOfLastItem - itemsPerPage
  const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem)
