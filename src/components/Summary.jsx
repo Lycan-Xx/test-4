@@ -43,7 +43,7 @@ const Summary = () => {
       Back
      </button>
      <button className="rounded-[40px] text-white  bg-primary font-lato px-[24px]">
-      Save & Download
+      Save & Next
      </button>
     </div>
    </section>

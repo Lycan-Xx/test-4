@@ -2,11 +2,13 @@ import React, { useState } from "react"
 import List from "./List.jsx"
 import Alert from "./Alert.jsx"
 import AISparkle from "../assets/GreySparkle.svg"
+import GreenSparkle from "../assets/GreenSparkle.svg"
+import PlusCircle from "../assets/PlusCircleGreen.svg"
 
 const ExperienceList = () => {
-  const [companyPosition, setCompanyPostion] = useState("")
-  const [workLocation, setWorkLocation] = useState("")
-  const [achievements, setAchievements] = useState("")
+ const [companyPosition, setCompanyPostion] = useState("")
+ const [workLocation, setWorkLocation] = useState("")
+ const [achievements, setAchievements] = useState("")
  const [list, setList] = useState([])
  const [isEditing, setIsEditng] = useState(false)
  const [editID, setEditID] = useState(null)
@@ -14,33 +16,66 @@ const ExperienceList = () => {
 
  const handleSubmit = (e) => {
   e.preventDefault()
-  console.log("hello submit")
+  if (!companyPosition) {
+   // display company empty alert
+  } else if (companyPosition && isEditing) {
+   //  deal with edit
+  } else {
+   //  show alert
+   const newItem = {
+    id: new Date().getTime().toString(),
+    title: companyPosition,
+    subtitle: workLocation,
+    achievementsList: achievements,
+   }
+   setList([...list, newItem])
+   setCompanyPostion("")
+   setWorkLocation("")
+   setAchievements("")
+  }
  }
 
  return (
   <section>
    <div className="w-full mx-auto justify-center align-middle">
+    {list.length > 0 && (
+     <div className="border-b-[1px] pb-4">
+      <List items={list} />
+      <div className="flex flex-row justify-between mt-4">
+       <p className="text-primary border-b-[1px] border-primary text-sm font-bold font-lato">
+        See more
+       </p>
+       <p type="submit" className="flex flex-row">
+        <img src={GreenSparkle} alt="" />
+        <p className="text-primary border-b-[1px] border-primary text-sm font-bold font-lato">
+         Generate
+        </p>
+       </p>
+      </div>
+     </div>
+    )}
+
     <form className="flex flex-col" onSubmit={handleSubmit} action="">
      {alert.show && <Alert />}
-     <div className="flex flex-col w-full mt-6 focus:border-none bg-gray-100 p-4 rounded-[8px] relative">
+     <div className="flex flex-col w-full mt-6 focus:border-none bg-gray-100 py-4 rounded-[8px] relative">
       <input
        type="text"
-       className="input text-base font-lato font-bold bg-gray-100 border-none  rounded-[8px]  focus:border-transparent"
-       placeholder="Your position and company here"
+       className="experienceInput text-base font-lato font-semibold bg-gray-100 border-none focus:border-transparent"
+       placeholder="Your position & company here"
        value={companyPosition}
        onChange={(e) => setCompanyPostion(e.target.value)}
       />
       <input
-       className="input h-[24px] rounded-[40px] "
+       className="experienceInput h-[24px] font-light mt-2 "
        type="text"
-       placeholder="location - (Start and End Date)"
+       placeholder="Location - (Start and End Date)"
        value={workLocation}
        onChange={(e) => setWorkLocation(e.target.value)}
       />
-      <div className="flex flex-row relative">
+      <div className="flex flex-row relative font-lato font-light">
        <input
         type="text"
-        className="input bg-gray-100 border-none mt-4  focus:border-transparent"
+        className="experienceInput mt-4"
         placeholder="Impressive achievements here"
         value={achievements}
         onChange={(e) => setAchievements(e.target.value)}
@@ -49,16 +84,22 @@ const ExperienceList = () => {
         type="submit"
         className="flex flex-row absolute right-2 bottom-0"
        >
-        <img src={AISparkle} alt="" />
-        <p className="border-b-[2px] border-gray-400 text-gray-400">
+        <img className="w-4 h-4" src={AISparkle} alt="" />
+        <p className="border-b-[1px] border-gray-400 text-gray-400 text-[12px] font-semibold">
          {isEditing ? "Edit" : "Generate"}
         </p>
        </button>
       </div>
      </div>
     </form>
-    <List />
-    <button>clear-items</button>
+    <section className="flex flex-row justify-between items-center align-middle">
+     <div className="flex flex-row h-[18px] mt-3">
+      <img className="h-[18px] w-[18px] mr-[2px]" src={PlusCircle} alt="" />
+      <p className="text-xs text-primary border-b-[1px] border-primary font-semibold font-lato">
+       Add Experience
+      </p>
+     </div>
+    </section>
    </div>
   </section>
  )
