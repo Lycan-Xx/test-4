@@ -11,7 +11,9 @@ const Summary = () => {
    <section>
     <form className="w-[38vw]" action="">
      <header className="flex flex-row justify-between">
-      <h5 className="font-lato font-bold text-2xl">Professional Summary</h5>
+      <h5 className="font-lato font-bold text-2xl whitespace-nowrap">
+       Professional Summary
+      </h5>
       <div className="flex flex-row text-primary align-middle items-center">
        <img className="text-primary" src={AISparkle} alt="" />
        <p className="whitespace-nowrap  border-b-primary border-b-[1px]">
