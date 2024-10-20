@@ -1,10 +1,11 @@
 import React from "react"
 import AISparkle from "../assets/GreenSparkle.svg"
+import ExperienceList from "./ExperienceList"
 
 const Experience = () => {
  return (
   <main className="flex flex-row justify-between align-middle">
-   <form className="w-[38vw]" action="">
+   <section className="w-[38vw]" action="">
     <header className="flex flex-row justify-between">
      <h5 className="font-lato font-bold text-2xl whitespace-nowrap">
       Experience.
@@ -17,7 +18,8 @@ const Experience = () => {
      </div>
     </header>
     <p className="normal-text">Review your experience history.</p>
-   </form>
+    <ExperienceList />
+   </section>
    <section className="border-[1px] border-[#d0d5dd] w-[45vw]"></section>
   </main>
  )
