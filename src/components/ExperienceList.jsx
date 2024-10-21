@@ -12,16 +12,24 @@ const ExperienceList = () => {
  const [list, setList] = useState([])
  const [isEditing, setIsEditng] = useState(false)
  const [editID, setEditID] = useState(null)
- const [alert, setAlert] = useState({ show: false, msg: "", type: "" })
+ const [alert, setAlert] = useState({
+  show: false,
+  msg: "",
+  type: "",
+ })
 
  const handleSubmit = (e) => {
   e.preventDefault()
   if (!companyPosition) {
    // display company empty alert
+   showAlert(true, "danger", "please enter company and position")
+  }
+  if (!workLocation) {
+   showAlert(true, "danger", "please enter work location")
   } else if (companyPosition && isEditing) {
    //  deal with edit
   } else {
-   //  show alert
+   showAlert(true, "success", "item added to the list")
    const newItem = {
     id: new Date().getTime().toString(),
     title: companyPosition,
@@ -35,12 +43,26 @@ const ExperienceList = () => {
   }
  }
 
+ const showAlert = (show = false, type = "", msg = "") => {
+  setAlert({ show, type, msg })
+ }
+
+ const clearList = () => {
+  showAlert(true, "danger", "emptylist")
+  setList([])
+ }
+
+ const removeItem = (id) => {
+  showAlert(true, "danger", "item-removed")
+  setList(list.filter((item) => item.id !== id))
+ }
+
  return (
   <section>
    <div className="w-full mx-auto justify-center align-middle">
     {list.length > 0 && (
      <div className="border-b-[1px] pb-4">
-      <List items={list} />
+      <List items={list} removeItem={removeItem} />
       <div className="flex flex-row justify-between mt-4">
        <p className="text-primary border-b-[1px] border-primary text-sm font-bold font-lato">
         See more
@@ -56,7 +78,7 @@ const ExperienceList = () => {
     )}
 
     <form className="flex flex-col" onSubmit={handleSubmit} action="">
-     {alert.show && <Alert />}
+     {alert.show && <Alert {...alert} removeAlert={showAlert} />}
      <div className="flex flex-col w-full mt-6 focus:border-none bg-gray-100 py-4 rounded-[8px] relative">
       <input
        type="text"
@@ -65,6 +87,8 @@ const ExperienceList = () => {
        value={companyPosition}
        onChange={(e) => setCompanyPostion(e.target.value)}
       />
+      {alert.show && <Alert {...alert} removeAlert={showAlert} />}
+
       <input
        className="experienceInput h-[24px] font-light mt-2 "
        type="text"

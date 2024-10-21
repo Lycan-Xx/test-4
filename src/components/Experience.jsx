@@ -25,12 +25,12 @@ const Experience = () => {
      <ExperienceList />
     </section>
 
-    <div className="flex flex-row justify-between  ">
+    <div className="flex flex-row justify-between flex-grow-1 ">
      <button className="rounded-[40px] border-[1px] border-[#98a2b3] px-[57px] h-[46px] text-[20px] font-bold font-lato">
       Back
      </button>
      <button className="rounded-[40px] text-white  bg-primary font-lato px-[24px]">
-      Save & Download
+      Save & Next
      </button>
     </div>
    </section>

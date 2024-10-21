@@ -1,7 +1,9 @@
 import React from "react"
 import { FaEdit, FaTrash } from "react-icons/fa"
+import EditPencil from "../assets/EditPencil.svg"
+import DeleteTrash from "../assets/DeleteTrash.svg"
 
-const List = ({ items }) => {
+const List = ({ items, removeItem }) => {
  return (
   <div className="flex flex-col">
    {items.map((item) => {
@@ -12,10 +14,12 @@ const List = ({ items }) => {
        <p className="font-lato text-xl font-bold">{title}</p>
        <div className="flex flex-row gap-2">
         <button type="button">
-         <FaEdit />
+         {/* <FaEdit /> */}
+         <img src={EditPencil} alt="" />
         </button>
         <button type="button">
-         <FaTrash />
+         {/* <FaTrash /> */}
+         <img onClick={() => removeItem(id)} src={DeleteTrash} alt="" />
         </button>
        </div>
       </header>

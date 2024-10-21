@@ -8,6 +8,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.alert-danger {
+ background: rgb(151, 58, 58);
+ border-radius: 30px;
+ padding-left: 20px;
+}
+
+.alert-success {
+ background-color: goldenrod;
+ border-radius: 30px;
+ padding-left: 20px;
+}
+
 .input-heading {
  font-size: 16px;
  color: #344054;
