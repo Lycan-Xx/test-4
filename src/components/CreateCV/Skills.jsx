@@ -19,7 +19,7 @@ const Skills = () => {
        </p>
       </div>
      </header>
-     <p className="normal-text">Review your education history.</p>
+     <p className="normal-text">Highlight 8 - 10 of your top skills.</p>
     </section>
 
     <div className="flex flex-row justify-between flex-grow-1 ">
