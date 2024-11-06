@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import AISparkle from "../assets/GreenSparkle.svg"
+import { useState } from "react"
+import AISparkle from "../../assets/GreenSparkle.svg"
 import ReactQuill from "react-quill"
 import "react-quill/dist/quill.snow.css"
 
@@ -26,12 +26,12 @@ const Summary = () => {
     {/*  */}
     <section className="text-input relative mb-[60px]">
      <ReactQuill
-      className="rounded-[16px] h-[20vh]"
+      className="rounded-[16px] h-[30vh]"
       theme="snow"
       value={value}
       onChange={setValue}
      />
-     <div className="flex flex-row text-primary align-middle items-center absolute right-0 bottom-1">
+     <div className="flex flex-row text-primary align-middle items-center absolute right-2 bottom-0">
       <img className="text-primary" src={AISparkle} alt="" />
       <p className="whitespace-nowrap  border-b-primary border-b-[1px] text-xs font-bold">
        Generate

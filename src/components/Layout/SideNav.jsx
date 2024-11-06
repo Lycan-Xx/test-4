@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import DoubleArrowRight from "../assets/DoubleArrowRight.svg"
-import logo from "../assets/LogoBeeCV.svg"
+import DoubleArrowRight from "../../assets/DoubleArrowRight.svg"
+import logo from "../../assets/LogoBeeCV.svg"
 // import { useGlobalContext } from "../context.jsx"
 
-import { links } from "../data/data"
+import { links } from "../../data/data"
 
 const SideNav = () => {
  //  const { isSidebarOpen, closeSidebar } = useGlobalContext()

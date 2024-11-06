@@ -1,8 +1,8 @@
 import React from "react"
-import AISparkle from "../assets/GreenSparkle.svg"
+import AISparkle from "../../assets/GreenSparkle.svg"
 import ExperienceList from "./ExperienceList"
 
-const Experience = () => {
+const Education = () => {
  return (
   <main className="flex flex-row justify-between align-middle h-screen">
    <section
@@ -12,7 +12,7 @@ const Experience = () => {
     <section>
      <header className="flex flex-row justify-between">
       <h5 className="font-lato font-bold text-2xl whitespace-nowrap">
-       Experience.
+       Education.
       </h5>
       <div className="flex flex-row text-primary align-middle items-center">
        <img className="text-primary" src={AISparkle} alt="" />
@@ -21,7 +21,7 @@ const Experience = () => {
        </p>
       </div>
      </header>
-     <p className="normal-text">Review your experience history.</p>
+     <p className="normal-text">Review your education history.</p>
      <ExperienceList />
     </section>
 
@@ -39,4 +39,4 @@ const Experience = () => {
  )
 }
 
-export default Experience
+export default Education

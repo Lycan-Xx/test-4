@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, useLocation } from "react-router-dom"
-import DownloadIcon from "../assets/DownloadIcon.svg"
+import DownloadIcon from "../../assets/DownloadIcon.svg"
 
 const CreateCVNav = () => {
  const location = useLocation()
@@ -9,40 +9,40 @@ const CreateCVNav = () => {
   {
    id: 1,
    text: "Personal Details",
-   link: "/personal-details",
+   link: "personal-details",
   },
   {
    id: 2,
    text: "Summary",
-   link: "/summary",
+   link: "summary",
   },
   {
    id: 3,
    text: "Experience",
-   link: "/experience",
+   link: "experience",
   },
   {
    id: 4,
    text: "Education",
-   link: "/education",
+   link: "education",
   },
   {
    id: 5,
    text: "Skills",
-   link: "/skills",
+   link: "skills",
   },
  ]
 
  return (
-  <main className="flex flex-row justify-between w-full">
-   <nav className="flex flex-row gap-[12px]">
+  <main className="flex flex-row justify-between my-[30px]">
+   <nav className="flex flex-row gap-[6px]">
     {CVLinks.map((links) => {
      const { id, text, link } = links
      const isActive = location.pathname === link
      return (
       <Link to={link} key={id}>
        <p
-        className={`flex whitespace-nowrap rounded-[26px] border-[1px] border-gray-300 justify-center items-center py-[12px] px-[40.5px] text-base text-gray-700 font-medium ${
+        className={`flex whitespace-nowrap rounded-[26px] border-[1px] border-gray-300 justify-center items-center py-[10px] px-[30.5px] text-base text-gray-700 font-medium ${
          isActive ? "bg-[#fbe2b7]" : "bg-gray-100"
         }`}
        >
@@ -52,9 +52,9 @@ const CreateCVNav = () => {
      )
     })}
    </nav>
-   <button className="md:w-[260px] md:h-[48px] rounded-[40px] bg-primary flex flex-row justify-center items-center">
-    <img className="w-[24px] h-[24px]" src={DownloadIcon} alt="" />
-    <p className="text-white text-[20px] font-bold ml-[8px] font-lato">
+   <button className="py-[6px] px-[20.5px] text-base whitespace-nowrap  rounded-[20px] bg-primary flex flex-row justify-center items-center">
+    <img className="w-[12px] h-[12px]" src={DownloadIcon} alt="" />
+    <p className="text-white text-[15px] font-bold ml-[8px] font-lato">
      Import LinkedIn
     </p>
    </button>

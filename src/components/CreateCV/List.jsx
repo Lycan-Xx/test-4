@@ -1,7 +1,7 @@
 import React from "react"
 import { FaEdit, FaTrash } from "react-icons/fa"
-import EditPencil from "../assets/EditPencil.svg"
-import DeleteTrash from "../assets/DeleteTrash.svg"
+import EditPencil from "../../assets/EditPencil.svg"
+import DeleteTrash from "../../assets/DeleteTrash.svg"
 
 const List = ({ items, removeItem }) => {
  return (

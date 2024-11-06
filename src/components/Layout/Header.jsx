@@ -1,9 +1,10 @@
 import React from "react"
-import LogoBeeCV from "../assets/LogoBeeCV.svg"
+import LogoBeeCV from "../../assets/LogoBeeCV.svg"
+import { Link } from "react-router-dom"
 
 const Header = () => {
  return (
-  <header className="bg-white shadow w-screen font-lato py-[41px]">
+  <header className="bg-white shadow font-lato py-[41px]">
    <div className="container mx-auto flex justify-between items-center">
     <div className="font-openSans font-semibold text-2xl flex-1 leading-[120%]">
      <img src={LogoBeeCV} alt="" />

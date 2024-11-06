@@ -3,10 +3,10 @@ import React, { useEffect } from "react"
 const Alert = ({ type, msg, removeAlert }) => {
  useEffect(() => {
   const timeout = setTimeout(() => {
-   removeAlert
+   removeAlert()
   }, 2000)
   return () => clearTimeout(timeout)
- }, [])
+ }, [list])
  return <p className={`alert alert-${type}`}>{msg}</p>
 }
 

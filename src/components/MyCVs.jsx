@@ -5,6 +5,7 @@ import { HiArrowRight } from "react-icons/hi"
 import TopRatedTemplates from "./TopRatedTemplates"
 import HomepageCVs from "./HomepageCVs"
 import HomepageCls from "./HomepageCls"
+import { Link } from "react-router-dom"
 
 const MyCVs = () => {
  const [activeTab, setActiveTab] = useState("CVs")
@@ -14,7 +15,7 @@ const MyCVs = () => {
  }
 
  return (
-  <main className="flex flex-col font-lato">
+  <main className="flex flex-col font-lato pt-[40px]">
    <header className="flex flex-row mx-auto justify-between w-full mb-[48px]">
     <div className="flex flex-col">
      <h4 className="font-bold text-[40px]">
@@ -47,9 +48,11 @@ const MyCVs = () => {
       <h5 className="text-[24px] font-bold">
        Choose from top rated templates.
       </h5>
-      <i className="flex flex-row items-center text-primary gap-1 hover:cursor-pointer">
-       View all <HiArrowRight />{" "}
-      </i>
+      <Link to="">
+       <i className="flex flex-row items-center text-primary gap-1 hover:cursor-pointer">
+        View all <HiArrowRight />{" "}
+       </i>
+      </Link>
      </header>
      <TopRatedTemplates />
     </article>

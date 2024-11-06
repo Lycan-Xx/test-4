@@ -1,10 +1,16 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import TopRatedTemplates from "../TopRatedTemplates"
 import { AllTemplates } from "../../data/templates"
 import PremiumCrown from "../../assets/PremiumCrown.svg"
+import { useTemplate } from "../../context/TemplateContext"
 
 const Templates = () => {
  const [activeCV, setActiveCV] = useState("All")
+ const { setSelectedTemplate } = useTemplate()
+
+ const handleTemplateSelect = (template) => {
+  setSelectedTemplate(template)
+ }
 
  const handleButtonClick = (btn) => {
   setActiveCV(btn)
@@ -74,7 +80,12 @@ const Templates = () => {
      {filteredTemplates.map((item) => {
       return (
        <div className="relative" key={item.id}>
-        <img key={item.id} src={item.template} alt="" />
+        <img
+         key={item.id}
+         src={item.template}
+         onClick={() => handleTemplateSelect(item)}
+         alt=""
+        />
         {item.premium && (
          <img className="absolute top-0 left-0" src={PremiumCrown} alt="" />
         )}

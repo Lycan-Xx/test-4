@@ -1,12 +1,14 @@
 import React from "react"
-import Header from "../Header"
+import Header from "../Layout/Header"
 import MyCVs from "../MyCVs"
 
 const Homepage = () => {
-  return <div>
-    <Header />
-    <MyCVs />
- </div>
+ return (
+  <div>
+   {/* <Header /> */}
+   <MyCVs />
+  </div>
+ )
 }
 
 export default Homepage

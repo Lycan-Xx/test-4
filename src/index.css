@@ -8,6 +8,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (min-width: 768px) {
+ body {
+  max-width: 1400px;
+  width: screen;
+  padding-left: 10%;
+  padding-right: 10%;
+ }
+}
+
 .alert-danger {
  background: rgb(151, 58, 58);
  border-radius: 30px;

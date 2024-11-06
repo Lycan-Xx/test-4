@@ -13,9 +13,12 @@ module.exports = {
    colors: {
     primary: "#f3a218",
     secondary: "#98A2B3",
+    preselectTab: "#f0f2f5",
+    selectedTab: "#fef6e7",
+    selectedTabBorder: "#fbe2b7",
     greytext: "#475367",
-     greytextlight: "#98a2b3",
-    errorRed : "#d42620"
+    greytextlight: "#98a2b3",
+    errorRed: "#d42620",
    },
   },
   plugins: [],

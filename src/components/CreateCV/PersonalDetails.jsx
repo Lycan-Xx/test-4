@@ -1,12 +1,14 @@
 import React, { useState } from "react"
-import AISparkle from "../assets/GreenSparkle.svg"
+import AISparkle from "../../assets/GreenSparkle.svg"
 import ReactQuill from "react-quill"
-import ProfilePic from "../assets/PersonalDetailsProfilePic.jpg"
-import CameraIcon from "../assets/CameraIcon.svg"
+import ProfilePic from "../../assets/PersonalDetailsProfilePic.jpg"
+import CameraIcon from "../../assets/CameraIcon.svg"
+import { useTemplate } from "../../context/TemplateContext"
+import { Link } from "react-router-dom"
 // import "react-quill/dist/quill.snow.css"
 
-const PersonalDetails = () => {
- const [value, setValue] = useState("")
+const PersonalDetails = ({ onNext }) => {
+ const { selectedTemplate } = useTemplate()
 
  return (
   <main className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center">
@@ -86,12 +88,21 @@ const PersonalDetails = () => {
      <button className="rounded-[40px] border-[1px] border-[#98a2b3] px-[57px] h-[46px] text-[20px] font-bold font-lato">
       Back
      </button>
-     <button className="rounded-[40px] text-white  bg-primary font-lato px-[24px]">
+     <Link
+      to="/create-cv/education"
+      className="rounded-[40px] text-white  bg-primary font-lato px-[24px] flex justify-center align-center items-center"
+     >
       Save & Next
-     </button>
+     </Link>
     </div>
    </section>
-   <section className="border-[1px] border-[#d0d5dd] w-[595px]"></section>
+   <section className="border-[1px] border-[#d0d5dd] ">
+    {selectedTemplate ? (
+     <img src={selectedTemplate.template} alt={selectedTemplate.name} />
+    ) : (
+     <p>Select a template to preview here</p>
+    )}
+   </section>
   </main>
  )
 }

@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import List from "./List.jsx"
 import Alert from "./Alert.jsx"
-import AISparkle from "../assets/GreySparkle.svg"
-import GreenSparkle from "../assets/GreenSparkle.svg"
-import PlusCircle from "../assets/PlusCircleGreen.svg"
+import AISparkle from "../../assets/GreySparkle.svg"
+import GreenSparkle from "../../assets/GreenSparkle.svg"
+import PlusCircle from "../../assets/PlusCircleGreen.svg"
 
 const ExperienceList = () => {
  const [companyPosition, setCompanyPostion] = useState("")
@@ -57,6 +57,10 @@ const ExperienceList = () => {
   setList(list.filter((item) => item.id !== id))
  }
 
+ const editItem = (id) => {
+  const specificItem = list.find
+ }
+
  return (
   <section>
    <div className="w-full mx-auto justify-center align-middle">
@@ -78,7 +82,7 @@ const ExperienceList = () => {
     )}
 
     <form className="flex flex-col" onSubmit={handleSubmit} action="">
-     {alert.show && <Alert {...alert} removeAlert={showAlert} />}
+     {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
      <div className="flex flex-col w-full mt-6 focus:border-none bg-gray-100 py-4 rounded-[8px] relative">
       <input
        type="text"
@@ -87,7 +91,6 @@ const ExperienceList = () => {
        value={companyPosition}
        onChange={(e) => setCompanyPostion(e.target.value)}
       />
-      {alert.show && <Alert {...alert} removeAlert={showAlert} />}
 
       <input
        className="experienceInput h-[24px] font-light mt-2 "
