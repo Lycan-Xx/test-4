@@ -5,6 +5,7 @@ import AccountStatus from "../AccountStatus"
 import AISparkle from "../../assets/AISparkle.svg"
 import AccountInformation from "../AccountInformation"
 import SocialAccounts from "../SocialAccounts"
+import EmailNotifications from "../EmailNotifications"
 
 const Settings = () => {
  return (
@@ -21,7 +22,8 @@ const Settings = () => {
     button={true}
    />
    <AccountInformation />
-   <SocialAccounts />
+     <SocialAccounts />
+     <EmailNotifications />
   </main>
  )
 }
