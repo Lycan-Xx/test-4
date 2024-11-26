@@ -10,6 +10,9 @@ import TemplatesIcon from "../assets/TemplatesIcon.svg"
 import Crown from "../assets/crown.svg"
 import ProfilePic from "../assets/ProfileEllipse.svg"
 
+import LinkedInPic from "../assets/LinkedIn.svg"
+import GooglePic from "../assets/GooglePic.svg"
+
 // export const ceevies = [
 //  {
 //   id: 1,
@@ -28,6 +31,22 @@ import ProfilePic from "../assets/ProfileEllipse.svg"
 //     ]
 //  },
 // ]
+
+export const socialAccount = [
+ {
+  id: 1,
+  acctType: "LinkedIn",
+  image: LinkedInPic,
+  connected: true,
+ },
+
+ {
+  id: 2,
+  acctType: "Google",
+  image: GooglePic,
+  connected: false,
+ },
+]
 
 export const paymentOptions = [
  {
@@ -74,15 +93,17 @@ export const links = [
  {
   id: 4,
   url: "/upgrade",
-  text: "calendar",
+  text: "Upgrade Now",
   icon: Crown,
  },
+
  {
   id: 5,
-  url: "/documents",
-  text: "documents",
+  url: "/profile",
+  text: "Ozzy Abel",
   icon: ProfilePic,
  },
+
  {
   id: 6,
   url: "/logOut",

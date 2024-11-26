@@ -7,7 +7,7 @@ import { useTemplate } from "../../context/TemplateContext"
 import { Link } from "react-router-dom"
 // import "react-quill/dist/quill.snow.css"
 
-const PersonalDetails = ({ onNext }) => {
+const PersonalDetails = ({onNext}) => {
  const { selectedTemplate } = useTemplate()
 
  return (
@@ -88,15 +88,12 @@ const PersonalDetails = ({ onNext }) => {
      <button className="rounded-[40px] border-[1px] border-[#98a2b3] px-[57px] h-[46px] text-[20px] font-bold font-lato">
       Back
      </button>
-     <Link
-      to="/create-cv/education"
-      className="rounded-[40px] text-white  bg-primary font-lato px-[24px] flex justify-center align-center items-center"
-     >
+     <Link to="create-cv/education" className="rounded-[40px] text-white  bg-primary font-lato px-[24px]">
       Save & Next
      </Link>
     </div>
    </section>
-   <section className="border-[1px] border-[#d0d5dd] ">
+   <section className="border-[1px] border-[#d0d5dd] w-[595px]">
     {selectedTemplate ? (
      <img src={selectedTemplate.template} alt={selectedTemplate.name} />
     ) : (

@@ -1,71 +1,111 @@
 import React, { useState } from "react"
+import { useNavContext } from "../../context/NavContext"
 import DoubleArrowRight from "../../assets/DoubleArrowRight.svg"
 import logo from "../../assets/LogoBeeCV.svg"
-// import { useGlobalContext } from "../context.jsx"
-
+import { PiCaretDoubleLeftThin, PiCaretDoubleRightThin } from "react-icons/pi"
 import { links } from "../../data/data"
+import { Link } from "react-router-dom"
 
 const SideNav = () => {
- //  const { isSidebarOpen, closeSidebar } = useGlobalContext()
+ const [isSidebarOpen, setIsSidebarOpen] = useState(true)
+ const { activePage, setActivePage } = useNavContext()
 
- const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-
- //  const closeSidebar = () => {
- //   setIsSidebarOpen(false)
- //  }
+ const handleNavClick = (id) => {
+  setActivePage(id)
+ }
 
  return (
-  <aside className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}`}>
+  <aside
+   className={`${
+    isSidebarOpen ? "sidebar show-sidebar w-[30vw]" : "sidebar"
+   } h-[100vh] flex flex-col justify-between items-center py-[5%] font-poppins text-[20px] font-medium text-gray-700 gap-[101px]`}
+  >
    <div className="sidebar-header">
-    <img src={logo} className="logo" alt="" />
-    <button className="close-btn">
-     <img src={DoubleArrowRight} alt="" />
+    <button
+     onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+     className="close-btn"
+    >
+     {isSidebarOpen ? "" : <PiCaretDoubleRightThin size={40} />}
     </button>
+    <div className="flex flex-row justify-between">
+     <img src={logo} className="logo" alt="Logo" />
+     <button onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+      {isSidebarOpen ? <PiCaretDoubleLeftThin size={40} /> : ""}
+     </button>
+    </div>
    </div>
-   <ul className="links">
+
+   {/* First set of links */}
+   <ul className="links flex flex-col gap-[24px]">
     {links.slice(0, 2).map((link) => {
      const { id, url, text, icon } = link
      return (
-      <li key={id + 1}>
-       <a
-        className="flex flex-row h-[100%] items-center justify-center w-[100%] mx-auto "
-        href={url}
+      <li
+       className={`gap-2 flex flex-row justify-center items-center rounded-full ${
+        activePage === id ? "border-primary px-6 border-[1px] bg-primary bg-opacity-15 py-2 text-primary" : ""
+       }`}
+       key={id}
+       onClick={() => handleNavClick(id)}
+      >
+       <Link
+        className="flex flex-row h-[100%] items-center justify-center mx-auto"
+        to={url}
        >
-        <img src={icon} alt="" />
-        {text}
-       </a>
+        <img src={icon} alt={text} />
+        {isSidebarOpen ? <p>{text}</p> : ""}
+       </Link>
       </li>
      )
     })}
    </ul>
-   <ul className="links">
+
+   {/* Second set of links */}
+   <ul className="links gap-[24px] flex flex-col">
     {links.slice(2, 5).map((link) => {
      const { id, url, text, icon } = link
      return (
-      <li key={id + 3}>
-       <a
-        className="flex flex-row h-[100%] items-center justify-center w-[100%] mx-auto "
-        href={url}
+      <li
+       className={`flex flex-row justify-center items-center rounded-[40px] gap-[10px] ${
+        activePage === id ? "bg-activeLink border-primary border-[1px]" : ""
+       } ${id === 4 ? "bg-primary text-white md:px-[40px] md:py-[16px]" : ""}`}
+       key={id}
+       onClick={() => handleNavClick(id)}
+      >
+       <Link
+        className="flex flex-row items-center justify-start mx-auto"
+        to={url}
        >
-        <img src={icon} alt="" />
-        {text}
-       </a>
+        <img
+         className="mr-[8px] max-w-[56px] max-h-[56px]"
+         src={icon}
+         alt={text}
+        />
+        {isSidebarOpen ? <p>{text}</p> : ""}
+       </Link>
       </li>
      )
     })}
    </ul>
+
+   {/* Third set of links */}
    <ul className="links">
     {links.slice(5, 6).map((link) => {
      const { id, url, text, icon } = link
      return (
-      <li key={6}>
-       <a
-        className="flex flex-row h-[100%] items-center justify-center w-[100%] mx-auto "
+      <li
+       className={`gap-2 flex flex-row justify-center items-center rounded-full ${
+        activePage === id ? "border-primary border-[1px] bg-activeLink" : ""
+       }`}
+       key={id}
+       onClick={() => handleNavClick(id)}
+      >
+       <Link
+        className="flex flex-row h-[100%] items-center justify-center mx-auto"
         href={url}
        >
-        <img src={icon} alt="" />
-        {text}
-       </a>
+        <img src={icon} alt={text} />
+        {isSidebarOpen ? <p>{text}</p> : ""}
+       </Link>
       </li>
      )
     })}

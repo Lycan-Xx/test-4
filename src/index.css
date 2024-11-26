@@ -15,6 +15,10 @@
   padding-left: 10%;
   padding-right: 10%; */
  }
+
+ bg-activeLink {
+  border: 1px solid #f3a218;
+ }
 }
 
 .alert-danger {
