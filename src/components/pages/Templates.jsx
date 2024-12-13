@@ -6,6 +6,7 @@ import { useTemplate } from "../../context/TemplateContext"
 import { BsArrowRight } from "react-icons/bs"
 import { CiZoomIn } from "react-icons/ci"
 import TemplateModal from "../PopUps/TemplateModal"
+import { Link } from "react-router-dom"
 
 const Templates = () => {
  const [activeCV, setActiveCV] = useState("All")
@@ -112,12 +113,12 @@ const Templates = () => {
          >
           Preview <CiZoomIn className="ml-2" />
          </button>
-         <button
+         <Link to="/create-cv/personal-details"
           className="rounded-[30px] w-full py-[10px] flex items-center justify-center bg-white text-primary hover:bg-primary hover:text-white transition-colors duration-200 mt-4"
           onClick={() => handleTemplateSelect(item)}
          >
           Use Template <BsArrowRight className="ml-2" />
-         </button>
+         </Link>
         </div>
        </div>
       )

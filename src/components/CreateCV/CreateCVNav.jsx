@@ -34,7 +34,7 @@ const CreateCVNav = () => {
  ]
 
  return (
-  <main className="flex flex-row justify-between my-[30px]">
+  <main className="flex flex-row justify-between my-[30px] mx-auto w-full px-[10vw]">
    <nav className="flex flex-row gap-[6px]">
     {CVLinks.map((links) => {
      const { id, text, link } = links

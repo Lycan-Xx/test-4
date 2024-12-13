@@ -7,11 +7,11 @@ import { useTemplate } from "../../context/TemplateContext"
 import { Link } from "react-router-dom"
 // import "react-quill/dist/quill.snow.css"
 
-const PersonalDetails = ({onNext}) => {
+const PersonalDetails = ({ onNext }) => {
  const { selectedTemplate } = useTemplate()
 
  return (
-  <main className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center">
+  <main className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] justify-between w-screen px-[10vw]">
    <section>
     {/* <header className="flex flex-row mx-auto justify-between w-full mb-[48px]">
      <div className="flex flex-col">
@@ -23,7 +23,7 @@ const PersonalDetails = ({onNext}) => {
       </p>
      </div>
     </header> */}
-    <form action="">
+    <form className="md:w-[45vw]" action="">
      <header className="flex flex-row justify-between">
       <h5 className="font-lato font-bold text-2xl">Personal details</h5>
       <div className="flex flex-row text-primary align-middle items-center">
@@ -88,18 +88,23 @@ const PersonalDetails = ({onNext}) => {
      <button className="rounded-[40px] border-[1px] border-[#98a2b3] px-[57px] h-[46px] text-[20px] font-bold font-lato">
       Back
      </button>
-     <Link to="create-cv/education" className="rounded-[40px] text-white  bg-primary font-lato px-[24px]">
+     <Link
+      to="create-cv/education"
+      className="rounded-[40px] text-white  bg-primary font-lato px-[24px]"
+     >
       Save & Next
      </Link>
     </div>
    </section>
-   <section className="border-[1px] border-[#d0d5dd] w-[595px]">
-    {selectedTemplate ? (
-     <img src={selectedTemplate.template} alt={selectedTemplate.name} />
-    ) : (
-     <p>Select a template to preview here</p>
-    )}
-   </section>
+   {selectedTemplate ? (
+    <img
+     className="h-[100vh] w-full"
+     src={selectedTemplate.template}
+     alt={selectedTemplate.name}
+    />
+   ) : (
+    <p>Select a template to preview here</p>
+   )}
   </main>
  )
 }

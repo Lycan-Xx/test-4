@@ -1,10 +1,9 @@
 import { createContext, useState, useContext } from "react"
 
-const TemplateContext = createContext()
+export const TemplateContext = createContext()
 
 export const TemplateProvider = ({ children }) => {
-  const [selectedTemplate, setSelectedTemplate] = useState(null)
-  
+ const [selectedTemplate, setSelectedTemplate] = useState(null)
 
  return (
   <TemplateContext.Provider value={{ selectedTemplate, setSelectedTemplate }}>

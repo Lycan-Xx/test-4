@@ -5,7 +5,7 @@ import {
  Routes,
  useNavigate,
 } from "react-router-dom"
-import CreateCV from "./CreateCV"
+// import CreateCV from "./CreateCV"
 import CreateCVLayout from "./CreateCVLayout/CreateCVLayout"
 import PersonalDetails from "./PersonalDetails"
 import Education from "./Education"
@@ -27,7 +27,7 @@ const CVCreatorApp = () => {
  return (
   <Routes>
    <Route element={<CreateCVLayout />}>
-    <Route path="/" element={<CreateCV />} />
+    {/* <Route path="/" element={<CreateCV />} /> */}
     <Route path="/personal-details" element={<PersonalDetails />} />
     <Route path="/education" element={<Education />} />
     <Route path="/experience" element={<Experience />} />

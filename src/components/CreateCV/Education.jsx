@@ -1,8 +1,11 @@
 import React from "react"
 import AISparkle from "../../assets/GreenSparkle.svg"
 import ExperienceList from "./ExperienceList"
+import { useContext } from "react"
+import { TemplateContext } from "../../context/TemplateContext"
 
 const Education = () => {
+ const { selectedTemplate } = useContext(TemplateContext)
  return (
   <main className="flex flex-row justify-between align-middle h-screen">
    <section
@@ -34,7 +37,13 @@ const Education = () => {
      </button>
     </div>
    </section>
-   <section className="border-[1px] border-[#d0d5dd] w-[45vw]"></section>
+   <section className="border-[1px] border-[#d0d5dd]">
+    {selectedTemplate ? (
+     <img src={selectedTemplate} alt="" />
+    ) : (
+     <p>How are you here ?</p>
+    )}
+   </section>
   </main>
  )
 }

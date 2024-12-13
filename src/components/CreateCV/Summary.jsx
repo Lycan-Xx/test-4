@@ -2,14 +2,16 @@ import { useState } from "react"
 import AISparkle from "../../assets/GreenSparkle.svg"
 import ReactQuill from "react-quill"
 import "react-quill/dist/quill.snow.css"
+import { useTemplate } from "../../context/TemplateContext"
 
 const Summary = () => {
+ const { selectedTemplate } = useTemplate()
  const [value, setValue] = useState("")
 
  return (
-  <main className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center">
+  <main className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center px-[10vw]">
    <section>
-    <form className="w-[38vw]" action="">
+    <form className="md:w-[45vw]" action="">
      <header className="flex flex-row justify-between">
       <h5 className="font-lato font-bold text-2xl whitespace-nowrap">
        Professional Summary
@@ -47,7 +49,13 @@ const Summary = () => {
      </button>
     </div>
    </section>
-   <section className="border-[1px] border-[#d0d5dd] w-[595px]"></section>
+   <section className="border-[1px] border-[#d0d5dd] md:w-[45vw]">
+    {selectedTemplate ? (
+     <img src={selectedTemplate.template} alt={selectedTemplate.name} />
+    ) : (
+     <p>Select a template to preview here</p>
+    )}
+   </section>
   </main>
  )
 }
