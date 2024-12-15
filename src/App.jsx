@@ -5,6 +5,7 @@ import Homepage from "./components/pages/Homepage"
 import { TemplateProvider } from "./context/TemplateContext"
 import Templates from "./components/pages/Templates"
 import Settings from "./components/pages/Settings"
+import PaymentHistory from "./components/pages/PaymentHistory"
 import CVCreatorApp from "./components/CreateCV/CVCreatorApp"
 import Layout from "./components/Layout/Layout"
 import { NavProvider } from "./context/NavContext"
@@ -20,6 +21,7 @@ function App() {
        <Route path="/create-cv/*" element={<CVCreatorApp />} />
              <Route path="/templates" element={<Templates />} />
              <Route path="/settings" element={<Settings />}  />
+             <Route path="/payment-history" element={<PaymentHistory />} />
       </Route>
      </Routes>
     </Router>

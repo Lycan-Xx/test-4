@@ -5,6 +5,7 @@ import Remita from "../assets/remita.svg"
 
 import DashboardIcon from "../assets/DashboardIcon.svg"
 import SettingsIcon from "../assets/SettingsIcon.svg"
+import CreditCard from "../assets/creditcard.svg"
 import LogOutIcon from "../assets/LogOutIcon.svg"
 import TemplatesIcon from "../assets/TemplatesIcon.svg"
 import Crown from "../assets/crown.svg"
@@ -92,20 +93,26 @@ export const links = [
  },
  {
   id: 4,
+  url: "/payment-history",
+  text: "payment history",
+  icon: CreditCard,
+ },
+ {
+  id: 5,
   url: "/upgrade",
   text: "Upgrade Now",
   icon: Crown,
  },
 
  {
-  id: 5,
+  id: 6,
   url: "/profile",
   text: "Ozzy Abel",
   icon: ProfilePic,
  },
 
  {
-  id: 6,
+  id: 7,
   url: "/logOut",
   text: "Logout",
   icon: LogOutIcon,

@@ -18,9 +18,9 @@ const SideNav = () => {
   <aside
    className={`${
     isSidebarOpen ? "sidebar show-sidebar w-[30vw]" : "sidebar"
-   } h-[100vh] flex flex-col justify-between items-center py-[5%] font-poppins text-[20px] font-medium text-gray-700 gap-[101px]`}
+   } h-[100vh] flex flex-col justify-between items-center pt-[5%] font-poppins text-[20px] font-medium text-gray-700 gap-[101px] mt-0`}
   >
-   <div className="sidebar-header">
+   <div className="">
     <button
      onClick={() => setIsSidebarOpen(!isSidebarOpen)}
      className="close-btn"
@@ -42,7 +42,9 @@ const SideNav = () => {
      return (
       <li
        className={`gap-2 flex flex-row justify-center items-center rounded-full ${
-        activePage === id ? "border-primary px-6 border-[1px] bg-primary bg-opacity-15 py-2 text-primary" : ""
+        activePage === id
+         ? "border-primary px-6 border-[1px] bg-primary bg-opacity-15 py-2 text-primary"
+         : ""
        }`}
        key={id}
        onClick={() => handleNavClick(id)}
@@ -67,7 +69,7 @@ const SideNav = () => {
       <li
        className={`flex flex-row justify-center items-center rounded-[40px] gap-[10px] ${
         activePage === id ? "bg-activeLink border-primary border-[1px]" : ""
-       } ${id === 4 ? "bg-primary text-white md:px-[40px] md:py-[16px]" : ""}`}
+       } ${id === 5 ? "bg-primary text-white md:px-[40px] md:py-[16px]" : ""}`}
        key={id}
        onClick={() => handleNavClick(id)}
       >
@@ -89,7 +91,7 @@ const SideNav = () => {
 
    {/* Third set of links */}
    <ul className="links">
-    {links.slice(5, 6).map((link) => {
+    {links.slice(5, 7).map((link) => {
      const { id, url, text, icon } = link
      return (
       <li

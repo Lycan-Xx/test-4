@@ -1,5 +1,4 @@
 import { Outlet, useLocation } from "react-router-dom"
-import Header from "./Header"
 import SideNav from "./SideNav"
 
 export default function Layout() {
@@ -9,7 +8,7 @@ export default function Layout() {
   <section className="flex flex-row">
    {!location.pathname.startsWith("/create-cv") && <SideNav />}
 
-   <main>
+   <main className="pt-[3%] md:pl-8 md:pr-[152px]">
     <Outlet />
    </main>
   </section>
