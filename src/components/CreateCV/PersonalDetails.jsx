@@ -12,7 +12,7 @@ const PersonalDetails = ({ onNext }) => {
 
  return (
   <main className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] justify-between w-screen px-[10vw]">
-   <section>
+   <section className="md:w-full md:min-w-1/2 flex flex-col  h-screen">
     {/* <header className="flex flex-row mx-auto justify-between w-full mb-[48px]">
      <div className="flex flex-col">
       <h4 className="font-bold text-[40px] leading-[130%]">
@@ -23,7 +23,7 @@ const PersonalDetails = ({ onNext }) => {
       </p>
      </div>
     </header> */}
-    <form className="md:w-[45vw]" action="">
+    <form action="">
      <header className="flex flex-row justify-between">
       <h5 className="font-lato font-bold text-2xl">Personal details</h5>
       <div className="flex flex-row text-primary align-middle items-center">

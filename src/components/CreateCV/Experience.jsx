@@ -6,9 +6,9 @@ import { useTemplate } from "../../context/TemplateContext"
 const Experience = () => {
  const { selectedTemplate } = useTemplate()
  return (
-  <main className="flex flex-row justify-between align-middle h-screen px-[10vw]">
+  <main className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center px-[10vw]">
    <section
-    className="md:w-[45vw] flex flex-col justify-between  h-screen"
+    className="md:w-[50vw] flex flex-col justify-between  h-screen"
     action=""
    >
     <section>
@@ -36,9 +36,13 @@ const Experience = () => {
      </button>
     </div>
    </section>
-   <section className="border-[1px] border-[#d0d5dd] md:w-[45vw]">
+   <section className="border-[1px] border-[#d0d5dd] h-[100vh] w-[45vw]">
     {selectedTemplate ? (
-     <img src={selectedTemplate.template} alt={selectedTemplate.name} />
+     <img
+      className="object-cover md:h-[100vh]"
+      src={selectedTemplate.template}
+      alt={selectedTemplate.name}
+     />
     ) : (
      <p>Select a template to preview here</p>
     )}

@@ -1,10 +1,14 @@
 import React from "react"
 import AISparkle from "../../assets/GreenSparkle.svg"
+import { useTemplate } from "../../context/TemplateContext"
 
 const Skills = () => {
- return   <main className="flex flex-row justify-between align-middle h-screen">
+ const { selectedTemplate } = useTemplate()
+
+ return (
+  <main className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center px-[10vw]">
    <section
-    className="w-[38vw] flex flex-col justify-between  h-screen"
+    className="md:w-[50vw]  flex flex-col justify-between  h-screen"
     action=""
    >
     <section>
@@ -31,9 +35,19 @@ const Skills = () => {
      </button>
     </div>
    </section>
-   <section className="border-[1px] border-[#d0d5dd] w-[45vw]"></section>
+   <section className="border-[1px] border-[#d0d5dd] md:h-[100vh] md:w-[45vw]">
+    {selectedTemplate ? (
+     <img
+      className="object-cover md:h-[100vh]"
+      src={selectedTemplate.template}
+      alt={selectedTemplate.name}
+     />
+    ) : (
+     <p>Select a template to preview here</p>
+    )}
+   </section>
   </main>
- 
+ )
 }
 
 export default Skills

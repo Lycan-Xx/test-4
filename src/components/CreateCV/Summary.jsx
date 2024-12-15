@@ -10,8 +10,8 @@ const Summary = () => {
 
  return (
   <main className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center px-[10vw]">
-   <section>
-    <form className="md:w-[45vw]" action="">
+   <section className="md:w-[50vw] flex flex-col gap-[5%]  h-screen">
+    <form className="" action="">
      <header className="flex flex-row justify-between">
       <h5 className="font-lato font-bold text-2xl whitespace-nowrap">
        Professional Summary
@@ -49,9 +49,13 @@ const Summary = () => {
      </button>
     </div>
    </section>
-   <section className="border-[1px] border-[#d0d5dd] md:w-[45vw]">
+   <section className="border-[1px] border-[#d0d5dd] h-[100vh] w-[45vw]">
     {selectedTemplate ? (
-     <img src={selectedTemplate.template} alt={selectedTemplate.name} />
+     <img
+      className="object-cover md:h-[100vh]"
+      src={selectedTemplate.template}
+      alt={selectedTemplate.name}
+     />
     ) : (
      <p>Select a template to preview here</p>
     )}

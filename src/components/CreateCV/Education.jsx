@@ -7,9 +7,9 @@ import { TemplateContext } from "../../context/TemplateContext"
 const Education = () => {
  const { selectedTemplate } = useContext(TemplateContext)
  return (
-  <main className="flex flex-row justify-between align-middle h-screen">
+  <main className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center px-[10vw]">
    <section
-    className="w-[38vw] flex flex-col justify-between  h-screen"
+    className="w-[50vw] flex flex-col justify-between  h-screen"
     action=""
    >
     <section>
@@ -37,11 +37,15 @@ const Education = () => {
      </button>
     </div>
    </section>
-   <section className="border-[1px] border-[#d0d5dd]">
+   <section className="border-[1px] border-[#d0d5dd] md:h-[100vh] md:w-[45vw]">
     {selectedTemplate ? (
-     <img src={selectedTemplate} alt="" />
+     <img
+      className="object-cover md:h-[100vh]"
+      src={selectedTemplate.template}
+      alt={selectedTemplate.name}
+     />
     ) : (
-     <p>How are you here ?</p>
+     <p>Select a template to preview here</p>
     )}
    </section>
   </main>
