@@ -16,6 +16,23 @@
   padding-right: 10%; */
  }
 
+ .sidebar {
+  transition: width 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+ }
+
+ .sidebar-closed {
+  width: 120px;
+  opacity: 0.5s;
+ }
+
+ .sidebar-open {
+  width: 250px;
+opacity: 1;
+}
+
+
+
  bg-activeLink {
   border: 1px solid #f3a218;
  }

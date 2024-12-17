@@ -16,9 +16,9 @@ const SideNav = () => {
 
  return (
   <aside
-   className={`${
-    isSidebarOpen ? "sidebar show-sidebar w-[30vw]" : "sidebar"
-   } h-[100vh] flex flex-col justify-between items-center pt-[5%] font-poppins text-[20px] font-medium text-gray-700 gap-[101px] mt-0`}
+   className={` sidebar ${
+    isSidebarOpen ? "sidebar-open" : "sidebar-closed"
+   } h-[100vh] flex flex-col justify-between items-center pt-[5%] font-poppins text-[20px] font-medium text-gray-700 gap-[101px] mt-0 transition-all duration-300 ease-in-out`}
   >
    <div className="">
     <button

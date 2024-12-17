@@ -42,7 +42,7 @@ const CreateCVNav = () => {
      return (
       <Link to={link} key={id}>
        <p
-        className={`flex whitespace-nowrap rounded-[26px] border-[1px] border-gray-300 justify-center items-center py-[10px] px-[30.5px] text-base text-gray-700 font-medium ${
+        className={`flex whitespace-nowrap rounded-[26px] border-[1px] border-gray-300 justify-center items-center py-[8px] px-[25px] text-base text-gray-700 font-medium ${
          isActive ? "bg-[#fbe2b7]" : "bg-gray-100"
         }`}
        >
