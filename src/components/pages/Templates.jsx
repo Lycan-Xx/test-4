@@ -113,8 +113,9 @@ const Templates = () => {
          >
           Preview <CiZoomIn className="ml-2" />
          </button>
-         <Link to="/create-cv/personal-details"
-          className="rounded-[30px] w-full py-[10px] flex items-center justify-center bg-white text-primary hover:bg-primary hover:text-white transition-colors duration-200 mt-4"
+         <Link
+          to="/create-cv/personal-details"
+          className="rounded-[30px] w-full py-[10px] px-[5px] flex items-center justify-center bg-white text-primary hover:bg-primary hover:text-white transition-colors duration-200 mt-4 whitespace-nowrap"
           onClick={() => handleTemplateSelect(item)}
          >
           Use Template <BsArrowRight className="ml-2" />

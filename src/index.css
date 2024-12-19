@@ -18,7 +18,6 @@
 
  .sidebar {
   transition: width 0.3s ease, opacity 0.3s ease;
-  overflow: hidden;
  }
 
  .sidebar-closed {
@@ -27,11 +26,9 @@
  }
 
  .sidebar-open {
-  width: 250px;
-opacity: 1;
-}
-
-
+  width: 440px;
+  opacity: 1;
+ }
 
  bg-activeLink {
   border: 1px solid #f3a218;
