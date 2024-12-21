@@ -19,7 +19,7 @@ const Templates = () => {
   isModalOpen,
  } = useTemplate()
 
-//  const [selectedImage, setSelectedImage] = useState("")
+ //  const [selectedImage, setSelectedImage] = useState("")
 
  //  const handleTemplateSelect = (template) => {
  //   setSelectedTemplate(template)
@@ -64,9 +64,9 @@ const Templates = () => {
  return (
   <section className="flex flex-col">
    <header>
-    <div className="flex flex-col">
-     <h4 className="font-bold text-[40px]">Templates.</h4>
-     <p className="font-poppins font-light text-[20px] mt-[10px] text-greytext">
+    <div className="flex flex-col px-[2rem] lg:px-0 ">
+     <h4 className="font-bold text-4xl lg:text-[40px]">Templates.</h4>
+     <p className="font-poppins font-light text-base lg:text-[20px] mt-[10px] text-greytext">
       Choose one of these templates to build your CV.
      </p>
     </div>
@@ -79,11 +79,11 @@ const Templates = () => {
    </article>{" "}
    {/* All Free Premuim Templates  */}
    <section className="flex flex-col gap-6 pt-[40px]">
-    <header className="flex flex-row gap-3">
+    <header className="flex flex-row gap-3  px-[2rem]">
      {tabNames.map((item) => {
       return (
        <button
-        className={`cursor-pointer px-[42px] py-[12px] rounded-[26px] ${
+        className={`cursor-pointer px-4 py-1 lg:px-[42px] lg:py-[12px] rounded-[26px] ${
          activeCV === item.name
           ? "bg-primary text-white"
           : "bg-gray-200 text-black"
@@ -96,7 +96,7 @@ const Templates = () => {
       )
      })}
     </header>
-    <section className=" grid grid-cols-4 gap-16">
+    <section className=" grid grid-cols-2 lg:grid-cols-4 lg:gap-16 gap-4 px-[2rem]">
      {filteredTemplates.map((item) => {
       return (
        <div className="relative group" key={item.id}>

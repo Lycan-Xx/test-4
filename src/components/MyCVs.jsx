@@ -27,10 +27,10 @@ const MyCVs = () => {
   <main className="flex flex-col font-lato pt-[40px] px-[24px]">
    <header className="flex flex-row mx-auto justify-between w-full mb-[48px]">
     <div className="flex flex-col">
-     <h4 className="font-bold text-[40px]">
+     <h4 className="font-bold text-2xl md:text-[40px]">
       Welcome <span className="text-primary">Ozzy</span>
      </h4>
-     <p className="font-poppins font-light text-[20px] mt-[10px] text-greytext">
+     <p className="font-poppins font-light text-sm md:text-[20px] mt-[10px] text-greytext">
       Select a template to build your CV.
      </p>
     </div>
@@ -38,15 +38,15 @@ const MyCVs = () => {
      <img className="w-[24px] h-[24px]" src={Crown} alt="" />
      <p className="text-white text-[24px] font-bold ml-[8px] font-lato">
       {" "}
-      upgrade Now{" "}
+      Upgrade Now{" "}
      </p>
     </button>
    </header>
    {/* CVs / Cover Letters Tabs */}
    <section>
-    <header className="flex flex-row border-b-2 pb-[10px] gap-[32px] font-bold text-[20px] text-greytextlight">
+    <header className="flex flex-row border-b-2 pb-[10px] gap-[32px] font-bold md:text-[20px] text-greytextlight">
      <button
-      className={`${activeTab == "CVs" ? "font-bold text-gray-900" : ""} `}
+      className={` ${activeTab == "CVs" ? "font-bold text-gray-900" : ""} `}
       onClick={() => handleTabClick("CVs")}
      >
       My CVs
@@ -64,11 +64,11 @@ const MyCVs = () => {
     </section>
     <article className="flex flex-col bg-gray-100 mt-[32px] rounded-2xl py-[24px] px-[32px]">
      <header className="flex flex-row w-full justify-between pb-4">
-      <h5 className="text-[24px] font-bold">
+      <h5 className="md:text-[24px] text- font-bold">
        Choose from top rated templates.
       </h5>
       <Link to="">
-       <i className="flex flex-row items-center text-primary gap-1 hover:cursor-pointer">
+       <i className=" hidden md:flex flex-row items-center text-primary gap-1 hover:cursor-pointer">
         View all <HiArrowRight />{" "}
        </i>
       </Link>

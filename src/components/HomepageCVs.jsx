@@ -5,12 +5,12 @@ import { Link } from "react-router-dom"
 const HomepageCVs = () => {
  return (
   <article className="flex md:flex-row gap-[32px] items-center py-[32px] border-b-2">
-   <div className="w-[138px] h-[190px] md:w-[276px] md:h-[380px] rounded-lg border-gray-300 border-[0.5px] flex items-center align-middle justify-center  ">
+   <div className="w-[138px] h-[190px] md:w-[276px] md:h-[380px] rounded-lg border-gray-300 border-[0.5px] flex items-center align-middle justify-center ">
     <Link to={"/templates"}>
      <CiCirclePlus className="hover:text-white cursor-pointer text-gray-300 hover:bg-primary rounded-full text-[70px]" />{" "}
     </Link>
    </div>
-   <div className="flex flex-col w-[188px] md:w-[284px]">
+   <div className="flex flex-col w-[40vw] md:w-[284px]">
     <h4 className="text-greytextlight font-bold leading-[150%] font-lato text-[16px] whitespace-nowrap my-[16px] md:my-0">
      Create New CV
     </h4>
