@@ -9,22 +9,22 @@ import { useTemplate } from "../context/TemplateContext"
 import TemplateModal from "./PopUps/TemplateModal"
 
 const MyCVs = () => {
-  const [activeTab, setActiveTab] = useState("CVs")
-   const {
-    selectedTemplate,
-    selectedImage,
-    handlePreviewClick,
-    handleTemplateSelect,
-    handleCloseModal,
-    isModalOpen,
-   } = useTemplate()
+ const [activeTab, setActiveTab] = useState("CVs")
+ const {
+  selectedTemplate,
+  selectedImage,
+  handlePreviewClick,
+  handleTemplateSelect,
+  handleCloseModal,
+  isModalOpen,
+ } = useTemplate()
 
  const handleTabClick = (tab) => {
   setActiveTab(tab)
  }
 
  return (
-  <main className="flex flex-col font-lato pt-[40px]">
+  <main className="flex flex-col font-lato pt-[40px] px-[24px]">
    <header className="flex flex-row mx-auto justify-between w-full mb-[48px]">
     <div className="flex flex-col">
      <h4 className="font-bold text-[40px]">
@@ -34,11 +34,11 @@ const MyCVs = () => {
       Select a template to build your CV.
      </p>
     </div>
-    <button className="md:w-[260px] md:h-[68px] rounded-[40px] bg-primary flex flex-row justify-center items-center">
+    <button className="hidden md:w-[260px] md:h-[68px] rounded-[40px] bg-primary md:flex flex-row justify-center items-center">
      <img className="w-[24px] h-[24px]" src={Crown} alt="" />
      <p className="text-white text-[24px] font-bold ml-[8px] font-lato">
       {" "}
-      Upgrade Now{" "}
+      upgrade Now{" "}
      </p>
     </button>
    </header>

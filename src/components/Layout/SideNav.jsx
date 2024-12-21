@@ -16,7 +16,7 @@ const SideNav = () => {
 
  return (
   <aside
-   className={` sidebar relative ${
+   className={` hidden md:flex ${
     isSidebarOpen ? "sidebar-open" : "sidebar-closed"
    } h-[100vh] flex flex-col justify-between items-center pt-[5%] px-[30px] font-poppins text-[20px] font-medium text-gray-700 gap-[101px] mt-0 transition-all duration-300 ease-in-out`}
   >
@@ -86,11 +86,7 @@ const SideNav = () => {
         className="flex flex-row items-center justify-start mx-auto"
         to={url}
        >
-        <img
-         className="max-w-[56px] max-h-[56px]"
-         src={icon}
-         alt={text}
-        />
+        <img className="max-w-[56px] max-h-[56px]" src={icon} alt={text} />
         {isSidebarOpen ? <p>{text}</p> : ""}
        </Link>
       </li>
