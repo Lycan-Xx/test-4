@@ -6,7 +6,9 @@ export default function Layout() {
 
  return (
   <section className="flex flex-row max-w-[100vw] overflow-x-hidden">
-   {!location.pathname.startsWith("/create-cv") && <SideNav />}
+   <nav className="block ">
+    {!location.pathname.startsWith("/create-cv") && <SideNav />}
+   </nav>
 
    <main className="pt-[3%] md:pl-8 md:pr-[152px]">
     <Outlet />

@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import React, { useState } from "react"
 import List from "./List.jsx"
 import Alert from "./Alert.jsx"
 import AISparkle from "../../assets/GreySparkle.svg"
@@ -28,7 +27,17 @@ const EducationList = () => {
     if (!workLocation) {
      showAlert(true, "danger", "please enter work location")
     } else if (companyPosition && isEditing) {
-     //  deal with edit
+      const updatedList = list.map((item) => {
+        if (item.id === editID) {
+          return {
+            ...item, title: companyPosition, subtitle: workLocation,
+            achievementsList: achievements
+          };
+          return item;
+       }
+      })
+      setList(updatedList);
+      showAlert(true, "success", "item updated")
     } else {
      showAlert(true, "success", "item added to the list")
      const newItem = {
@@ -58,9 +67,16 @@ const EducationList = () => {
     setList(list.filter((item) => item.id !== id))
    }
 
-   const editItem = (id) => {
-    const specificItem = list.find
-   }
+ const editItem = (id) => {
+  const specificItem = list.find((item) => item.id === id)
+  if (specificItem) {
+   setCompanyPostion(specificItem.title)
+   setWorkLocation(specificItem.subtitle)
+   setAchievements(specificItem.achievementsList)
+   setIsEditng(true)
+   setEditID(id)
+  }
+ }
 
   return (
    <section>
@@ -72,12 +88,12 @@ const EducationList = () => {
         <p className="text-primary border-b-[1px] border-primary text-sm font-bold font-lato">
          See more
         </p>
-        <p type="submit" className="flex flex-row">
+        <div type="submit" className="flex flex-row">
          <img src={GreenSparkle} alt="" />
          <p className="text-primary border-b-[1px] border-primary text-sm font-bold font-lato">
           Generate
          </p>
-        </p>
+        </div>
        </div>
       </div>
      )}
