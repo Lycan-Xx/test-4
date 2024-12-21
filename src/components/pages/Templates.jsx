@@ -10,24 +10,31 @@ import { Link } from "react-router-dom"
 
 const Templates = () => {
  const [activeCV, setActiveCV] = useState("All")
- const { setSelectedTemplate } = useTemplate()
- const [isModalOpen, setIsModalOpen] = useState(false)
- const [selectedImage, setSelectedImage] = useState("")
+ const {
+  selectedTemplate,
+  selectedImage,
+  handlePreviewClick,
+  handleTemplateSelect,
+  handleCloseModal,
+  isModalOpen,
+ } = useTemplate()
 
- const handleTemplateSelect = (template) => {
-  setSelectedTemplate(template)
- }
+//  const [selectedImage, setSelectedImage] = useState("")
 
- const handlePreviewClick = (imagePath) => {
-  setSelectedImage(imagePath)
-  setIsModalOpen(true)
-  console.log(imagePath)
- }
+ //  const handleTemplateSelect = (template) => {
+ //   setSelectedTemplate(template)
+ //  }
 
- const handleCloseModal = () => {
-  setIsModalOpen(false)
-  setSelectedImage("")
- }
+ //  const handlePreviewClick = (imagePath) => {
+ //   setSelectedImage(imagePath)
+ //   setIsModalOpen(true)
+ //   console.log(imagePath)
+ //  }
+
+ //  const handleCloseModal = () => {
+ //   setIsModalOpen(false)
+ //   setSelectedImage("")
+ //  }
  const handleButtonClick = (btn) => {
   setActiveCV(btn)
  }
@@ -67,9 +74,6 @@ const Templates = () => {
    <article className="flex flex-col bg-gray-100 mt-[32px] rounded-2xl py-[24px] px-[32px]">
     <header className="flex flex-row w-full justify-between pb-4">
      <h5 className="text-[24px] font-bold">Choose from top rated templates.</h5>
-     {/* <i className="flex flex-row items-center text-primary gap-1 hover:cursor-pointer">
-      View all <HiArrowRight />{" "}
-     </i> */}
     </header>
     <TopRatedTemplates />
    </article>{" "}

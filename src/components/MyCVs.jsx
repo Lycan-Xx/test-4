@@ -1,14 +1,23 @@
 import { useState } from "react"
 import Crown from "../assets/crown.svg"
-import PlusCircle from "../assets/PlusCircle.svg"
 import { HiArrowRight } from "react-icons/hi"
 import TopRatedTemplates from "./TopRatedTemplates"
 import HomepageCVs from "./HomepageCVs"
 import HomepageCls from "./HomepageCls"
 import { Link } from "react-router-dom"
+import { useTemplate } from "../context/TemplateContext"
+import TemplateModal from "./PopUps/TemplateModal"
 
 const MyCVs = () => {
- const [activeTab, setActiveTab] = useState("CVs")
+  const [activeTab, setActiveTab] = useState("CVs")
+   const {
+    selectedTemplate,
+    selectedImage,
+    handlePreviewClick,
+    handleTemplateSelect,
+    handleCloseModal,
+    isModalOpen,
+   } = useTemplate()
 
  const handleTabClick = (tab) => {
   setActiveTab(tab)
@@ -36,8 +45,18 @@ const MyCVs = () => {
    {/* CVs / Cover Letters Tabs */}
    <section>
     <header className="flex flex-row border-b-2 pb-[10px] gap-[32px] font-bold text-[20px] text-greytextlight">
-     <button onClick={() => handleTabClick("CVs")}>My CVs</button>
-     <button onClick={() => handleTabClick("CLs")}>Cover Letters</button>
+     <button
+      className={`${activeTab == "CVs" ? "font-bold text-gray-900" : ""} `}
+      onClick={() => handleTabClick("CVs")}
+     >
+      My CVs
+     </button>
+     <button
+      className={`${activeTab == "CLs" ? "font-bold text-gray-900" : ""} `}
+      onClick={() => handleTabClick("CLs")}
+     >
+      Cover Letters
+     </button>
     </header>
     <section>
      {activeTab === "CVs" && <HomepageCVs />}
@@ -55,6 +74,9 @@ const MyCVs = () => {
       </Link>
      </header>
      <TopRatedTemplates />
+     {isModalOpen && (
+      <TemplateModal imageSrc={selectedImage} onClose={handleCloseModal} />
+     )}
     </article>
    </section>
   </main>

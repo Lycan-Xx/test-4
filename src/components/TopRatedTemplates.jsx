@@ -8,24 +8,31 @@ import { Link } from "react-router-dom"
 
 const TopRatedTemplates = () => {
  const [activeCV, setActiveCV] = useState("All")
- const { setSelectedTemplate } = useTemplate()
- const [isModalOpen, setIsModalOpen] = useState(false)
- const [selectedImage, setSelectedImage] = useState("")
+ const {
+  selectedTemplate,
+  selectedImage,
+  handlePreviewClick,
+  handleTemplateSelect,
+  handleCloseModal,
+  isModalOpen,
+ } = useTemplate()
+//  const [isModalOpen, setIsModalOpen] = useState(false)
+//  const [selectedImage, setSelectedImage] = useState("")
 
- const handleTemplateSelect = (template) => {
-  setSelectedTemplate(template)
- }
+//  const handleTemplateSelect = (template) => {
+//   setSelectedTemplate(template)
+//  }
 
- const handlePreviewClick = (imagePath) => {
-  setSelectedImage(imagePath)
-  setIsModalOpen(true)
-  console.log(imagePath)
- }
+//  const handlePreviewClick = (imagePath) => {
+//   setSelectedImage(imagePath)
+//   setIsModalOpen(true)
+//   console.log(imagePath)
+//  }
 
- const handleCloseModal = () => {
-  setIsModalOpen(false)
-  setSelectedImage("")
- }
+//  const handleCloseModal = () => {
+//   setIsModalOpen(false)
+//   setSelectedImage("")
+//  }
  const handleButtonClick = (btn) => {
   setActiveCV(btn)
  }
