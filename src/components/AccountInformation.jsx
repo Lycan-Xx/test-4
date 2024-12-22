@@ -23,7 +23,7 @@ const AccountInformation = () => {
       alt=""
      />
      <img
-      className="absolute lg:h-full lg:w-full h-[20px] w-[20px] lg:bottom-[1rem] lg:right-[1rem] right-0 bottom-3"
+      className="absolute lg:h-[40px] lg:w-[40px] h-[20px] w-[20px] lg:bottom-[1rem] lg:right-[1rem] right-0 bottom-3"
       src={ProfileCamera}
       alt=""
      />
