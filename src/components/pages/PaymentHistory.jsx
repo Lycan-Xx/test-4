@@ -6,7 +6,7 @@ const PaymentHistory = () => {
  return (
   <main className="flex flex-col px-[1rem]">
    <header className="flex flex-col mx-auto justify-between w-full mb-[48px] gap-[20px]">
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-0 lg:gap-4">
      <h4 className="font-bold text-2xl lg:text-[40px]">Payment History.</h4>
      <p className="font-poppins font-light text-sm md:text-[20px] mt-[10px] text-greytext">
       See history of your payment transactions here.

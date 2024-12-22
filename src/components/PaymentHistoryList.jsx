@@ -88,8 +88,8 @@ const PaymentHistoryList = () => {
      })}
     </div>
    </div>
-   <section className="overflow-x-scroll md:overflow-clip whitespace-nowrap max-w-[120vw] mt-[40px]">
-    <table className="flex flex-col lg:mt-[23px] bg-[#eceff2] w-max">
+   <section className="overflow-x-scroll md:overflow-clip whitespace-nowrap max-w-[100vw] mt-[40px] lg:mt-0">
+    <table className="flex flex-col lg:mt-[23px] bg-[#eceff2] w-max lg:w-full">
      <thead className="bg-[#e4e6e8]">
       <tr className="flex flex-row justify-between items-center text-[14px] w-full h-[46px] lg:h-[52px] font-poppins  text-[#374151]">
        <th className=""></th>
@@ -131,7 +131,7 @@ const PaymentHistoryList = () => {
             Succeeded
            </span>
           ) : (
-           <span className="bg-[#fbeae9] rounded-3xl px-[7.5px] py-[5.5px] flex flex-row md:w-[105px] text-xs text-errorRed font-lato">
+           <span className="bg-[#fbeae9] rounded-3xl px-[7.5px] py-[5.5px] flex flex-row md:w-[105px] text-xs text-errorRed font-lato font-bold leading-[16px]">
             {" "}
             <img className="pr-[6px]" src={FailureMinus} alt="" />
             Declined
