@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 
 const AccountInformation = () => {
  return (
-  <main className="flex flex-col justify-center align-middle items-center w-full">
+  <main className="flex flex-col justify-center align-middle items-center w-full border-dashed border-[1px] rounded-2xl p-[16px]">
    <AccountStatus
     heading={"Account Information"}
     subtitle={"Edit your account information"}
@@ -16,10 +16,14 @@ const AccountInformation = () => {
     className="flex flex-col items-start justify-start w-full gap-[24px]"
     action=""
    >
-    <div className="relative">
-     <img className="relative h-[200px] w-[200px]" src={ProfilePic} alt="" />
+    <div className="relative mt-[24px] lg:mt-0">
      <img
-      className="absolute bottom-[1rem] right-[1rem]"
+      className="relative w-[96px] h-[96px] lg:h-[200px] lg:w-[200px]"
+      src={ProfilePic}
+      alt=""
+     />
+     <img
+      className="absolute lg:h-full lg:w-full h-[20px] w-[20px] lg:bottom-[1rem] lg:right-[1rem] right-0 bottom-3"
       src={ProfileCamera}
       alt=""
      />
@@ -43,7 +47,7 @@ const AccountInformation = () => {
       placeholder="Ozzyabel@gmail.com"
      />
     </div>
-    <Link className="text-primary font-bold cursor-pointer flex text-right justify-end items-end w-full leading-[150%] font-lato text-xl">
+    <Link className="text-primary font-bold cursor-pointer flex text-right justify-end items-end w-full leading-[150%] font-lato text-base lg:text-xl">
      Save Changes
     </Link>
    </form>

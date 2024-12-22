@@ -23,23 +23,23 @@ const EmailNotifications = () => {
     bgColor="bg-white"
    />
    <div className=" py-[24px] px-[32px] flex flex-col mx-auto justify-center align-middle w-full">
-    <div className="flex flex-row justify-between items-center align-middle">
+    <div className="flex flex-row justify-between items-center align-middle border-b-[1px] border-gray-300 pb-[28px]">
      <div className="flex flex-col gap-[10px]">
       <h6 className="font-medium font-poppins text-[20px] text-gray-800">
        Update & Offers
       </h6>
-      <p className="text-gray-500 font-lato font-light">
+      <p className="text-gray-500 font-lato font-light text-sm lg:text-base">
        New features special deals, discounts and more
       </p>
      </div>
      <Switch checked={isUpdateOn} onChange={handleUpdateToggle} />
     </div>
-    <div className="flex flex-row justify-between items-center align-middle">
+    <div className="flex flex-row justify-between items-center align-middle pt-[28px]">
      <div className="flex flex-col gap-[10px]">
       <h6 className="font-medium font-poppins text-[20px] text-gray-800">
        Newsletters
       </h6>
-      <p className="text-gray-500 font-lato font-light">
+      <p className="text-gray-500 font-lato font-light text-sm lg:text-base">
        Useful resume & job tips
       </p>
      </div>

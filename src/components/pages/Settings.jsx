@@ -9,21 +9,21 @@ import EmailNotifications from "../EmailNotifications"
 
 const Settings = () => {
  return (
-  <main>
+  <main className="px-[24px]">
    <HeadingSubtitle
     heading={"Settings."}
     subtitle={"Choose one of these template to build your CV."}
    />
    <AccountStatus
-    heading={"Account Stautus"}
+    heading={"Account Status"}
     subtitle={
      "You are currently on a free plan which is why you can't use some features. Upgrade to premium to have access to premium features."
     }
     button={true}
    />
    <AccountInformation />
-     <SocialAccounts />
-     <EmailNotifications />
+   <SocialAccounts />
+   <EmailNotifications />
   </main>
  )
 }
