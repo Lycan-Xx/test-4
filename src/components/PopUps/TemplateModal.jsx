@@ -1,8 +1,22 @@
-import React from "react"
+import {useEffect, useState} from "react"
 
 const TemplateModal = ({ imageSrc, onClose }) => {
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+    return () => clearTimeout(timer)
+  }, [])
+
  return (
-  <main className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
+  <main
+   className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-10 z-50 transition-opacity ease-in-out duration-1000 w-screen h-screen ${
+    isVisible ? "opacity-100" : "opacity-0"
+   } `}
+  >
    <div className="relative">
     <img src={imageSrc} alt="Preview" className="lg:w-[500px] max-h-full" />
     <button

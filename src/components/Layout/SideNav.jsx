@@ -16,13 +16,15 @@ const SideNav = () => {
  return (
   <aside
    className={` hidden md:flex h-[100vh] flex-col justify-between items-center font-poppins text-[20px] font-medium text-gray-700 gap-[99px] mt-0 transition-all duration-300 ease-in-out  ${
-    isSidebarOpen ? "sidebar-open md:max-w-[320px]" : "sidebar-closed max-w-[119px]"
+    isSidebarOpen
+     ? "sidebar-open md:max-w-[320px]"
+     : "sidebar-closed max-w-[119px]"
    } `}
   >
    <div
     className={`flex items-center justify-center mt-[80px] px-[32px]  ${
      isSidebarOpen
-      ? " justify-between  md:max-w-[300px] flex-row-reverse"
+      ? " justify-between  md:min-w-[300px] flex-row-reverse"
       : " justify-center flex-col"
     }`}
    >
@@ -97,14 +99,14 @@ const SideNav = () => {
         } 
                 ${isSidebarOpen ? "" : "px-[10px] py-[10px]"}
 
-             ${id === 6 ? "bg-primary text-white  py-[12px]" : ""}`}
+             ${id === 6 ? "bg-primary text-white px-[50px]  py-[12px]" : ""}`}
        >
         {typeof icon === "string" ? (
          <img className="h-[33px]" src={icon} alt={`${text} icon`} />
         ) : (
          React.createElement(icon, { size: 33 })
         )}{" "}
-        {isSidebarOpen ? <p>{text}</p> : ""}
+        {isSidebarOpen ? <p className="whitespace-nowrap">{text}</p> : ""}
        </li>
       </Link>
      )

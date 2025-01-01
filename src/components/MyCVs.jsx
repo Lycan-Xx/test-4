@@ -24,7 +24,11 @@ const MyCVs = () => {
  }
 
  return (
-  <main className="flex flex-col font-lato pt-[40px] px-[24px]">
+  <main
+   className="flex flex-col font-lato pt-[40px] px-[24px]"
+   data-aos="fade-up"
+   data-aos-duration="500"
+  >
    <header className="flex flex-row mx-auto justify-between w-full mb-[48px]">
     <div className="flex flex-col">
      <h4 className="font-bold text-2xl md:text-[40px]">
@@ -67,7 +71,7 @@ const MyCVs = () => {
       <h5 className="md:text-[24px] text- font-bold">
        Choose from top rated templates.
       </h5>
-      <Link to="">
+      <Link to="/templates">
        <i className=" hidden md:flex flex-row items-center text-primary gap-1 hover:cursor-pointer">
         View all <HiArrowRight />{" "}
        </i>

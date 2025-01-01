@@ -7,8 +7,12 @@ const HomepageCls = () => {
    <div className="w-[138px] h-[190px] md:w-[276px] md:h-[380px] rounded-lg border-gray-300 border-[0.5px] flex items-center align-middle justify-center  ">
     <CiCirclePlus className="hover:text-white text-gray-300 hover:bg-primary rounded-full text-[70px]" />{" "}
    </div>
-   <div className="flex flex-col w-[40vw] md:w-[284px]">
-    <h4 className="text-greytextlight font-bold leading-[150%] font-lato text-[16px]  my-[16px] md:my-0">
+   <div
+    className="flex flex-col w-[40vw] md:w-[284px]"
+    data-aos="fade-down"
+    data-aos-offset="100"
+   >
+    <h4 className="text-greytextlight font-bold leading-[150%] font-lato text-[16px] md:text-[20px] my-[16px]">
      Generate your Cover Letter
     </h4>
     <p className="font-poppins font-light md:text-base text-greytext leading-[150%] text-sm">

@@ -37,10 +37,10 @@ const Education = () => {
      </button>
     </div>
    </section>
-   <section className="border-[1px] border-[#d0d5dd] md:h-[100vh] md:w-[45vw]">
+   <section className="border-[1px] border-[#d0d5dd] md:h-[100vh] md:w-[45vw] transition ease-in-out duration-1000">
     {selectedTemplate ? (
      <img
-      className="object-cover md:h-[100vh]"
+      className="object-cover md:h-[100vh] "
       src={selectedTemplate.template}
       alt={selectedTemplate.name}
      />

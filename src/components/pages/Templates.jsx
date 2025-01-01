@@ -62,7 +62,7 @@ const Templates = () => {
  })
 
  return (
-  <section className="flex flex-col">
+  <section data-aos="fade-up" data-aos-duration="500" className="flex flex-col">
    <header>
     <div className="flex flex-col px-[2rem] lg:px-0 ">
      <h4 className="font-bold text-4xl lg:text-[40px]">Templates.</h4>
@@ -100,8 +100,8 @@ const Templates = () => {
      {filteredTemplates.map((item) => {
       return (
        <div className="relative group" key={item.id}>
-          <img
-            src={item.template}
+        <img
+         src={item.template}
          onClick={() => handleTemplateSelect(item)}
          alt=""
         />

@@ -10,8 +10,12 @@ const HomepageCVs = () => {
      <CiCirclePlus className="hover:text-white cursor-pointer text-gray-300 hover:bg-primary rounded-full text-[70px]" />{" "}
     </Link>
    </div>
-   <div className="flex flex-col w-[40vw] md:w-[284px]">
-    <h4 className="text-greytextlight font-bold leading-[150%] font-lato text-[16px] whitespace-nowrap my-[16px] md:my-0">
+   <div
+    className="flex flex-col w-[40vw] md:w-[284px]"
+    data-aos="fade-down"
+    data-aos-offset="100"
+   >
+    <h4 className="text-greytextlight font-bold leading-[150%] font-lato text-[16px]  md:text-[20px]  whitespace-nowrap my-[16px]">
      Create New CV
     </h4>
     <p className="font-poppins font-light md:text-base text-greytext leading-[150%] text-sm">
