@@ -42,6 +42,7 @@ const TopRatedTemplates = () => {
     return (
      <div className="relative group" key={item.id}>
       <img
+       className="w-max"
        src={item.template}
        onClick={() => handleTemplateSelect(item)}
        alt=""

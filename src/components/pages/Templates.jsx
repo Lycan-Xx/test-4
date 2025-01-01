@@ -96,12 +96,12 @@ const Templates = () => {
       )
      })}
     </header>
-    <section className=" grid grid-cols-2 lg:grid-cols-4 lg:gap-16 gap-4 px-[2rem]">
+    <section className=" grid grid-cols-2 lg:grid-cols-4 lg:gap-3 gap-4 px-[2rem]">
      {filteredTemplates.map((item) => {
       return (
        <div className="relative group" key={item.id}>
-        <img
-         src={item.template}
+          <img
+            src={item.template}
          onClick={() => handleTemplateSelect(item)}
          alt=""
         />

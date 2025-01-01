@@ -34,15 +34,15 @@ const CreateCVNav = () => {
  ]
 
  return (
-  <main className="flex flex-row justify-between my-[30px] mx-auto w-full px-[10vw]">
-   <nav className="flex flex-row gap-[6px]">
+  <main className="flex flex-col md:flex-row justify-between my-[30px] mx-auto w-full md:px-[10vw]">
+   <nav className="flex flex-row md:gap-[6px] justify-between">
     {CVLinks.map((links) => {
      const { id, text, link } = links
      const isActive = location.pathname === link
      return (
       <Link to={link} key={id}>
        <p
-        className={`flex whitespace-nowrap rounded-[26px] border-[1px] border-gray-300 justify-center items-center py-[8px] px-[25px] text-base text-gray-700 font-medium ${
+        className={`flex text-wrap whitespace-nowrap rounded-[26px] border-[1px] border-gray-300 justify-center items-center md:py-[8px] md:px-[25px] md:text-base text-gray-700 md:font-medium ${
          isActive ? "bg-[#fbe2b7]" : "bg-gray-100"
         }`}
        >

@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { useNavContext } from "../../context/NavContext"
-import DoubleArrowRight from "../../assets/DoubleArrowRight.svg"
 import logo from "../../assets/LogoBeeCV.svg"
 import { PiCaretDoubleLeftThin, PiCaretDoubleRightThin } from "react-icons/pi"
 import { links } from "../../data/data"
@@ -16,106 +15,134 @@ const SideNav = () => {
 
  return (
   <aside
-   className={` hidden md:flex ${
-    isSidebarOpen ? "sidebar-open" : "sidebar-closed"
-   } h-[100vh] flex flex-col justify-between items-center pt-[5%] px-[30px] font-poppins text-[20px] font-medium text-gray-700 gap-[101px] mt-0 transition-all duration-300 ease-in-out`}
+   className={` hidden md:flex h-[100vh] flex-col justify-between items-center font-poppins text-[20px] font-medium text-gray-700 gap-[99px] mt-0 transition-all duration-300 ease-in-out  ${
+    isSidebarOpen ? "sidebar-open md:w-[320px]" : "sidebar-closed w-[119px]"
+   } `}
   >
-   <div className="flex flex-col justify-center items-center">
+   <div
+    className={`flex  w-full  items-center justify-center mt-[80px] px-[32px]  ${
+     isSidebarOpen
+      ? " justify-between  md:w-[300px] flex-row-reverse"
+      : " justify-center flex-col"
+    }`}
+   >
     <button
      onClick={() => setIsSidebarOpen(!isSidebarOpen)}
      className="close-btn"
     >
-     {isSidebarOpen ? "" : <PiCaretDoubleRightThin size={40} />}
+     {isSidebarOpen ? (
+      <PiCaretDoubleLeftThin size={40} />
+     ) : (
+      <PiCaretDoubleRightThin size={40} />
+     )}
     </button>
-    <div
-     className={` ${
-      isSidebarOpen ? "w-[150px] flex-row justify-between " : " "
-     } flex `}
-    >
-     <img src={logo} className="logo" alt="Logo" />
-     <button onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-      {isSidebarOpen ? <PiCaretDoubleLeftThin size={40} /> : ""}
-     </button>
-    </div>
+    <img src={logo} className="logo" alt="Logo" />
    </div>
 
    {/* First set of links */}
-   <ul className="links flex flex-col gap-[24px]">
+   <ul className="flex flex-col gap-[24px] max-w-[256px]">
     {links.slice(0, 2).map((link) => {
      const { id, url, text, icon } = link
      const isActive = activePage === id
      return (
-      <li
-       className={`gap-2 flex flex-row justify-center items-center rounded-full ${
-        isActive
-         ? "border-primary p-3 border-[1px] bg-primary bg-opacity-15  text-primary"
-         : ""
-       }`}
+      <Link
+       className="flex flex-row items-center justify-center h-[46px] "
        key={id}
        onClick={() => handleNavClick(id)}
+       to={url}
       >
-       <Link
-        className="flex flex-row h-[100%] items-center justify-center mx-auto"
-        to={url}
+       <li
+        className={`gap-2 flex flex-row justify-center items-center rounded-full ${
+         isActive
+          ? `border-primary border-[1px] bg-primary bg-opacity-15 text-primary ${
+             isSidebarOpen ? "px-[50px] py-[12px]" : "px-[10px] py-[10px]"
+            }`
+          : ""
+        } 
+  ${isSidebarOpen ? "" : "px-[10px] py-[10px]"}
+  `}
        >
-        <img className="" src={icon} alt={text} />
+        {typeof icon === "string" ? (
+         <img className="h-[33px]" src={icon} alt={`${text} icon`} />
+        ) : (
+         React.createElement(icon, { size: 33 })
+        )}
         {isSidebarOpen ? <p>{text}</p> : ""}
-       </Link>
-      </li>
+       </li>
+      </Link>
      )
     })}
    </ul>
 
    {/* Second set of links */}
-   <ul className="links gap-[24px] flex flex-col">
-    {links.slice(2, 5).map((link) => {
+   <ul className="gap-[24px] flex flex-col items-center w-full max-w-[256px]">
+    {links.slice(2, 6).map((link) => {
      const { id, url, text, icon } = link
      const isActive = activePage === id
 
      return (
-      <li
-       className={`gap-2 flex flex-row justify-center items-center rounded-full whitespace-nowrap ${
-        isActive
-         ? "border-primary p-3 border-[1px] bg-primary bg-opacity-15 text-primary"
-         : ""
-       } ${id === 5 ? "bg-primary text-white md:px-[40px] md:py-[16px]" : ""}`}
+      <Link
        key={id}
        onClick={() => handleNavClick(id)}
+       className="flex flex-row items-center justify-center h-[46px] w-full"
+       to={url}
       >
-       <Link
-        className="flex flex-row items-center justify-start mx-auto"
-        to={url}
+       <li
+        className={`gap-2 flex flex-row justify-center items-center rounded-full ${
+         isActive
+          ? `border-primary border-[1px] bg-primary bg-opacity-15  text-primary ${
+             isSidebarOpen ? "px-[50px] py-[12px]" : "px-[10px] py-[10px]"
+            } `
+          : ""
+        } 
+                ${isSidebarOpen ? "" : "px-[10px] py-[10px]"}
+
+             ${id === 6 ? "bg-primary text-white  py-[12px]" : ""}`}
        >
-        <img className="max-w-[56px] max-h-[56px]" src={icon} alt={text} />
+        {typeof icon === "string" ? (
+         <img className="h-[33px]" src={icon} alt={`${text} icon`} />
+        ) : (
+         React.createElement(icon, { size: 33 })
+        )}{" "}
         {isSidebarOpen ? <p>{text}</p> : ""}
-       </Link>
-      </li>
+       </li>
+      </Link>
      )
     })}
    </ul>
 
    {/* Third set of links */}
-   <ul className="links">
-    {links.slice(5, 7).map((link) => {
+   <ul className=" max-w-[256px] flex">
+    {links.slice(6, 7).map((link) => {
      const { id, url, text, icon } = link
      const isActive = activePage === id
 
      return (
-      <li
-       className={`gap-2 flex flex-row justify-center items-center rounded-full ${
-        isActive ? "border-primary border-[1px] bg-activeLink" : ""
-       }`}
-       key={id}
-       onClick={() => handleNavClick(id)}
+      <Link
+       className="flex flex-row items-center justify-center h-[46px] w-full"
+       href={url}
       >
-       <Link
-        className="flex flex-row h-[100%] items-center justify-center mx-auto"
-        href={url}
+       <li
+        className={`gap-2 flex flex-row justify-center items-center rounded-full ${
+         isActive
+          ? `border-primary border-[1px] bg-primary bg-opacity-15  text-primary ${
+             isSidebarOpen ? "px-[50px] py-[12px]" : "px-[10px] py-[10px]"
+            } `
+          : ""
+        } 
+                ${isSidebarOpen ? "" : "px-[10px] py-[10px]"}
+`}
+        key={id}
+        onClick={() => handleNavClick(id)}
        >
-        <img src={icon} alt={text} />
+        {typeof icon === "string" ? (
+         <img className="h-[33px]" src={icon} alt={`${text} icon`} />
+        ) : (
+         React.createElement(icon, { size: 33 })
+        )}{" "}
         {isSidebarOpen ? <p>{text}</p> : ""}
-       </Link>
-      </li>
+       </li>
+      </Link>
      )
     })}
    </ul>

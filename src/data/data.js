@@ -3,7 +3,13 @@ import Flutterwave from "../assets/flutterwave.svg"
 import Interswitch from "../assets/interswitch.svg"
 import Remita from "../assets/remita.svg"
 
-import DashboardIcon from "../assets/DashboardIcon.svg"
+import { PiGauge } from "react-icons/pi"
+import { PiFiles } from "react-icons/pi"
+import { PiGear } from "react-icons/pi"
+import { PiCreditCard } from "react-icons/pi"
+import { PiCrownSimple } from "react-icons/pi"
+import { PiSignOut } from "react-icons/pi"
+
 import SettingsIcon from "../assets/SettingsIcon.svg"
 import CreditCard from "../assets/creditcard.svg"
 import LogOutIcon from "../assets/LogOutIcon.svg"
@@ -77,45 +83,44 @@ export const links = [
   id: 1,
   url: "/",
   text: "Dashboard",
-  icon: DashboardIcon,
+  icon: PiGauge,
  },
  {
   id: 2,
   url: "/Templates",
   text: "Templates",
-  icon: TemplatesIcon,
+  icon: PiFiles
  },
  {
   id: 3,
   url: "/settings",
   text: "settings",
-  icon: SettingsIcon,
+  icon: PiGear 
  },
  {
   id: 4,
   url: "/payment-history",
   text: "payment history",
-  icon: CreditCard,
+  icon: PiCreditCard 
  },
  {
   id: 5,
-  url: "/upgrade",
-  text: "Upgrade Now",
-  icon: Crown,
- },
-
- {
-  id: 6,
   url: "/profile",
   text: "Ozzy Abel",
-  icon: ProfilePic,
+  icon: ProfilePic 
+ },
+ {
+  id: 6,
+  url: "/upgrade",
+  text: "Upgrade Now",
+  icon: PiCrownSimple
  },
 
  {
   id: 7,
   url: "/logOut",
   text: "Logout",
-  icon: LogOutIcon,
+  icon: PiSignOut
  },
 ]
 
