@@ -73,7 +73,7 @@ const Templates = () => {
    </header>
    <article className="flex flex-col bg-gray-100 mt-[32px] rounded-2xl py-[24px] px-[32px]">
     <header className="flex flex-row w-full justify-between pb-4">
-     <h5 className="text-[24px] font-bold">Choose from top rated templates.</h5>
+     <h5 className="text-[24px] font-bold md:leading-[150%]">Choose from top rated templates.</h5>
     </header>
     <TopRatedTemplates />
    </article>{" "}
@@ -83,10 +83,10 @@ const Templates = () => {
      {tabNames.map((item) => {
       return (
        <button
-        className={`cursor-pointer px-4 py-1 lg:px-[42px] lg:py-[12px] rounded-[26px] ${
+        className={`cursor-pointer px-4 py-1 lg:px-[42px] lg:py-[12px] rounded-[26px] font-poppins font-medium ${
          activeCV === item.name
           ? "bg-primary text-white"
-          : "bg-gray-200 text-black"
+          : "bg-gray-200 text-[#344054]"
         }`}
         onClick={() => handleButtonClick(item.name)}
         key={item.id}
@@ -99,7 +99,12 @@ const Templates = () => {
     <section className=" grid grid-cols-2 lg:grid-cols-4 lg:gap-3 gap-4 px-[2rem]">
      {filteredTemplates.map((item) => {
       return (
-       <div className="relative group" key={item.id}>
+       <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className="relative group"
+        key={item.id}
+       >
         <img
          src={item.template}
          onClick={() => handleTemplateSelect(item)}

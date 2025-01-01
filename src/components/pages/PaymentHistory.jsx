@@ -4,7 +4,11 @@ import PaymentHistoryList from "../PaymentHistoryList.jsx"
 
 const PaymentHistory = () => {
  return (
-  <main className="flex flex-col px-[1rem]">
+  <main
+   data-aos="fade-up"
+   data-aos-duration="500"
+   className="flex flex-col px-[1rem]"
+  >
    <header className="flex flex-col mx-auto justify-between w-full mb-[48px] gap-[20px]">
     <div className="flex flex-col gap-0 lg:gap-4">
      <h4 className="font-bold text-2xl lg:text-[40px]">Payment History.</h4>

@@ -8,8 +8,14 @@ import SocialAccounts from "../SocialAccounts"
 import EmailNotifications from "../EmailNotifications"
 
 const Settings = () => {
+
+  
  return (
-  <main className="px-[24px]">
+  <main
+   data-aos="fade-up"
+   data-aos-duration="500"
+   className="px-[24px] max-w-[100vw]"
+  >
    <HeadingSubtitle
     heading={"Settings."}
     subtitle={"Choose one of these template to build your CV."}

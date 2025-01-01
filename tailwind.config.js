@@ -6,7 +6,7 @@ module.exports = {
    fontFamily: {
     nunito: ["Nunito", "sans-serif"],
     lato: ["Lato", "sans-serif"],
-    openSans: ["Open Sans", "sans-serif"],
+    openSans: ["Open-Sans", "sans-serif"],
     poppins: ["Poppins", "sans-serif"],
     raleway: ["Raleway", "sans-serif"],
    },

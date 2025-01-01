@@ -11,11 +11,11 @@ const AccountStatus = ({ heading, subtitle, button, bgColor }) => {
    <h5 className="text-[20px] lg:text-2xl font-bold leading-[150%] font-lato">
     {heading}
    </h5>
-   <p className="font-poppins lg:text-xl font-light text-gray-600 lg:w-[1064px] text-sm">
+   <p className="font-poppins lg:text-xl font-light text-gray-600 lg:max-w-[100vw] text-sm">
     {subtitle}
    </p>
    {button && (
-    <div className="flex w-[100%] justify-end">
+    <div className="flex justify-end">
      <button className="md:w-[260px] md:h-[68px] rounded-[40px] bg-primary flex flex-row justify-center items-center py-[8.5px] px-[24px] ">
       <img className="w-[24px] h-[24px]" src={Crown} alt="" />
       <p className="text-white font-poppins text-[14px] md:text-[24px] font-light  md:font-bold ml-[8px]">

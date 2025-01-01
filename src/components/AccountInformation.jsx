@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 
 const AccountInformation = () => {
  return (
-  <main className="flex flex-col justify-center align-middle items-center w-full border-dashed border-[1px] rounded-2xl p-[16px]">
+  <main className="flex flex-col justify-center align-middle items-center w-full border-dashed border-[1px] rounded-2xl p-[16px] md:mt-6">
    <AccountStatus
     heading={"Account Information"}
     subtitle={"Edit your account information"}
