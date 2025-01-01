@@ -16,13 +16,13 @@ const SideNav = () => {
  return (
   <aside
    className={` hidden md:flex h-[100vh] flex-col justify-between items-center font-poppins text-[20px] font-medium text-gray-700 gap-[99px] mt-0 transition-all duration-300 ease-in-out  ${
-    isSidebarOpen ? "sidebar-open md:w-[320px]" : "sidebar-closed w-[119px]"
+    isSidebarOpen ? "sidebar-open md:max-w-[320px]" : "sidebar-closed max-w-[119px]"
    } `}
   >
    <div
-    className={`flex  w-full  items-center justify-center mt-[80px] px-[32px]  ${
+    className={`flex items-center justify-center mt-[80px] px-[32px]  ${
      isSidebarOpen
-      ? " justify-between  md:w-[300px] flex-row-reverse"
+      ? " justify-between  md:max-w-[300px] flex-row-reverse"
       : " justify-center flex-col"
     }`}
    >
@@ -52,7 +52,7 @@ const SideNav = () => {
        to={url}
       >
        <li
-        className={`gap-2 flex flex-row justify-center items-center rounded-full ${
+        className={`gap-2 flex flex-row justify-center items-center rounded-full transition-all duration-300 ease-in-out ${
          isActive
           ? `border-primary border-[1px] bg-primary bg-opacity-15 text-primary ${
              isSidebarOpen ? "px-[50px] py-[12px]" : "px-[10px] py-[10px]"
@@ -84,11 +84,11 @@ const SideNav = () => {
       <Link
        key={id}
        onClick={() => handleNavClick(id)}
-       className="flex flex-row items-center justify-center h-[46px] w-full"
+       className="flex flex-row items-center justify-center h-[46px] max-w-full"
        to={url}
       >
        <li
-        className={`gap-2 flex flex-row justify-center items-center rounded-full ${
+        className={`gap-2 flex flex-row justify-center items-center rounded-full transition-all duration-300 ease-in-out ${
          isActive
           ? `border-primary border-[1px] bg-primary bg-opacity-15  text-primary ${
              isSidebarOpen ? "px-[50px] py-[12px]" : "px-[10px] py-[10px]"
@@ -119,11 +119,11 @@ const SideNav = () => {
 
      return (
       <Link
-       className="flex flex-row items-center justify-center h-[46px] w-full"
+       className="flex flex-row items-center justify-center h-[46px] max-w-full"
        href={url}
       >
        <li
-        className={`gap-2 flex flex-row justify-center items-center rounded-full ${
+        className={`gap-2 flex flex-row justify-center items-center rounded-full transition-all duration-300 ease-in-out ${
          isActive
           ? `border-primary border-[1px] bg-primary bg-opacity-15  text-primary ${
              isSidebarOpen ? "px-[50px] py-[12px]" : "px-[10px] py-[10px]"
