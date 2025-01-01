@@ -62,7 +62,11 @@ const Templates = () => {
  })
 
  return (
-  <section data-aos="fade-up" data-aos-duration="500" className="flex flex-col">
+  <section
+   data-aos="fade-up"
+   data-aos-duration="500"
+   className="flex flex-col pt-[40px] "
+  >
    <header>
     <div className="flex flex-col px-[2rem] lg:px-0 ">
      <h4 className="font-bold text-4xl lg:text-[40px]">Templates.</h4>
@@ -73,7 +77,9 @@ const Templates = () => {
    </header>
    <article className="flex flex-col bg-gray-100 mt-[32px] rounded-2xl py-[24px] px-[32px]">
     <header className="flex flex-row w-full justify-between pb-4">
-     <h5 className="text-[24px] font-bold md:leading-[150%]">Choose from top rated templates.</h5>
+     <h5 className="text-[24px] font-bold md:leading-[150%]">
+      Choose from top rated templates.
+     </h5>
     </header>
     <TopRatedTemplates />
    </article>{" "}

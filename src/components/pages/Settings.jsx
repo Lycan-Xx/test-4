@@ -14,7 +14,7 @@ const Settings = () => {
   <main
    data-aos="fade-up"
    data-aos-duration="500"
-   className="px-[24px] max-w-[100vw]"
+   className="px-[24px] pt-[40px] max-w-[100vw]"
   >
    <HeadingSubtitle
     heading={"Settings."}

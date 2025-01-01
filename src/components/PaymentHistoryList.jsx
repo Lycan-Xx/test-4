@@ -70,7 +70,7 @@ const PaymentHistoryList = () => {
      <img className="absolute top-1/4 left-[10px]" src={SearchIcon} alt="" />
     </div>
 
-    <div className=" lg:flex lg:flex-row grid grid-cols-2 gap-[13px] ">
+    <div className=" lg:flex lg:flex-row grid grid-cols-2 gap-[13px]">
      {Sorters.map((item) => {
       const { id, icon, text } = item
       return (
@@ -101,7 +101,10 @@ const PaymentHistoryList = () => {
        <th></th>
       </tr>
      </thead>
-     <tbody className="w-full flex flex-col justify-between">
+     <tbody
+    
+      className="w-full flex flex-col justify-between"
+     >
       {currentItems.map((item) => {
        const {
         id,
@@ -114,6 +117,8 @@ const PaymentHistoryList = () => {
        } = item
        return (
         <tr
+         data-aos="fade-down"
+         data-aos-duration="500"
          className="flex flex-row items-center justify-between border-[1px] border-[#e4e6e8] h-[46px] md:h-[52px] font-lato"
          key={id}
         >

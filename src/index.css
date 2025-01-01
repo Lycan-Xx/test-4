@@ -13,12 +13,12 @@
 @tailwind utilities;
 
 @media (min-width: 768px) {
- body {
+ /* body { */
   /* max-width: 1400px;
   width: screen;
   padding-left: 10%;
   padding-right: 10%; */
- }
+ /* } */
 
  .sidebar {
   transition: width 0.9s ease, opacity 0.9s ease;
@@ -38,6 +38,8 @@
   border: 1px solid #f3a218;
  }
 }
+
+
 
 .alert-danger {
  background: rgb(151, 58, 58);
