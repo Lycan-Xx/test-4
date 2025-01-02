@@ -2,8 +2,14 @@ import React from "react"
 
 const UpgradeSubscription = () => {
  return (
-  <section class="flex flex-col md:items-center align-middle h-full w-screen">
-   <h4 className="font-lato text-2xl  md:text-[40px] font-bold leading-[150%] my-4 ml-3 md:ml-0">Pricing.</h4>
+  <section
+   data-aos="fade-up"
+   data-aos-duration="500"
+   className="flex flex-col md:items-center align-middle h-full w-full md:w-[70vw]"
+  >
+   <h4 className="font-lato text-2xl  md:text-[40px] font-bold leading-[150%] my-4 ml-3 md:ml-0">
+    Pricing.
+   </h4>
    <section class="flex flex-col md:flex-row gap-x-6 h-full justify-center items-center gap-y-12">
     <article class="font-poppins bg-[#f7f9fc] rounded-[24px] p-8 flex flex-col items-start justify-center">
      <p class="font-lato font-bold text-base md:text-2xl text-gray-500  bg-gray-200 px-8 py-2 rounded-[68px] w-min">
