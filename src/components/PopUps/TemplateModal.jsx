@@ -1,19 +1,18 @@
-import {useEffect, useState} from "react"
+import { useEffect, useState } from "react"
 
 const TemplateModal = ({ imageSrc, onClose }) => {
+ const [isVisible, setIsVisible] = useState(false)
 
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 100);
-    return () => clearTimeout(timer)
-  }, [])
+ useEffect(() => {
+  const timer = setTimeout(() => {
+   setIsVisible(true)
+  }, 100)
+  return () => clearTimeout(timer)
+ }, [])
 
  return (
   <main
-   className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-10 z-50 transition-opacity ease-in-out duration-1000 w-screen h-screen ${
+   className={`fixed top-0 flex items-center justify-center bg-black bg-opacity-20 z-50 transition-opacity ease-in-out duration-1000 w-full h-full ${
     isVisible ? "opacity-100" : "opacity-0"
    } `}
   >
