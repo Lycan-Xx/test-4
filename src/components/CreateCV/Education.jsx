@@ -7,9 +7,13 @@ import { TemplateContext } from "../../context/TemplateContext"
 const Education = () => {
  const { selectedTemplate } = useContext(TemplateContext)
  return (
-  <main className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center px-[10vw]">
+  <main
+   data-aos="fade-up"
+   data-aos-duration="500"
+   className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center px-[10vw]"
+  >
    <section
-    className="w-[50vw] flex flex-col justify-between  h-screen"
+    className="w-[50vw] flex flex-col justify-between h-screen"
     action=""
    >
     <section>
@@ -19,7 +23,7 @@ const Education = () => {
       </h5>
       <div className="flex flex-row text-primary align-middle items-center">
        <img className="text-primary" src={AISparkle} alt="" />
-       <p className="whitespace-nowrap  border-b-primary border-b-[1px]">
+       <p className="whitespace-nowrap border-b-primary border-b-[1px]">
         Generate Cover Letter
        </p>
       </div>
@@ -37,17 +41,15 @@ const Education = () => {
      </button>
     </div>
    </section>
-   <section className="border-[1px] border-[#d0d5dd] md:h-[100vh] md:w-[45vw] transition ease-in-out duration-1000">
-    {selectedTemplate ? (
-     <img
-      className="object-cover md:h-[100vh] "
-      src={selectedTemplate.template}
-      alt={selectedTemplate.name}
-     />
-    ) : (
-     <p>Select a template to preview here</p>
-    )}
-   </section>
+   {selectedTemplate ? (
+    <img
+     className="h-[100vh] w-full"
+     src={selectedTemplate.template}
+     alt={selectedTemplate.name}
+    />
+   ) : (
+    <p>Select a template to preview here</p>
+   )}
   </main>
  )
 }

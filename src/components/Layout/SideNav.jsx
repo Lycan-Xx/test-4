@@ -15,7 +15,7 @@ const SideNav = () => {
 
  return (
   <aside
-   className={` hidden md:flex h-[100vh] flex-col justify-between items-center font-poppins text-[20px] font-medium text-gray-700 gap-[99px] mt-0 transition-all duration-300 ease-in-out  ${
+   className={`hidden md:flex h-[100vh] flex-col justify-center md:justify-between items-center font-poppins text-[20px] font-medium text-gray-700 gap-[99px] mt-0 transition-all duration-300 ease-in-out border-r-[1px]  ${
     isSidebarOpen
      ? "sidebar-open md:max-w-[320px]"
      : "sidebar-closed max-w-[119px]"
@@ -92,14 +92,14 @@ const SideNav = () => {
        <li
         className={`gap-2 flex flex-row justify-center items-center rounded-full transition-all duration-300 ease-in-out ${
          isActive
-          ? `border-primary border-[1px] bg-primary bg-opacity-15  text-primary ${
+          ? `border-primary border-[1px] bg-primary bg-opacity-15  text-primary w-min ${
              isSidebarOpen ? "px-[50px] py-[12px]" : "px-[10px] py-[10px]"
             } `
           : ""
         } 
                 ${isSidebarOpen ? "" : "px-[10px] py-[10px]"}
 
-             ${id === 6 ? "bg-primary text-white px-[50px]  py-[12px]" : ""}`}
+             ${id === 6 ? "bg-primary text-white px-[15px] py-[12px]" : ""}`}
        >
         {typeof icon === "string" ? (
          <img className="h-[33px]" src={icon} alt={`${text} icon`} />

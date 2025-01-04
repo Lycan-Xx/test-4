@@ -11,7 +11,11 @@ const PersonalDetails = ({ onNext }) => {
  const { selectedTemplate } = useTemplate()
 
  return (
-  <main className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] justify-between w-screen px-[10vw]">
+  <main
+   data-aos="fade-up"
+   data-aos-duration="500"
+   className="flex flex-col md:flex-row gap-[30px] md:gap-[130px] justify-between w-screen px-[10vw]"
+  >
    <section className="md:w-full md:min-w-1/2 flex flex-col  h-screen">
     {/* <header className="flex flex-row mx-auto justify-between w-full mb-[48px]">
      <div className="flex flex-col">
@@ -42,7 +46,7 @@ const PersonalDetails = ({ onNext }) => {
        <h5 className="input-heading">Job Title</h5>
        <input
         className="input h-[48px] rounded-[40px] "
-        type="number"
+        type="text"
         placeholder="Product Designer"
        />
       </div>
@@ -90,7 +94,7 @@ const PersonalDetails = ({ onNext }) => {
      </button>
      <Link
       to="create-cv/education"
-      className="rounded-[40px] text-white  bg-primary font-lato px-[24px]"
+      className="rounded-[40px] text-white flex justify-center items-center  bg-primary font-lato px-[24px]"
      >
       Save & Next
      </Link>
