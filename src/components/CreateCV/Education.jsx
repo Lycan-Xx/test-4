@@ -13,7 +13,7 @@ const Education = () => {
    className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center px-[10vw]"
   >
    <section
-    className="w-[50vw] flex flex-col justify-between h-screen"
+    className="md:w-[50vw] flex flex-col justify-between h-screen"
     action=""
    >
     <section>
@@ -29,7 +29,12 @@ const Education = () => {
       </div>
      </header>
      <p className="normal-text">Review your education history.</p>
-     <ExperienceList />
+     <ExperienceList
+      placeholder1="Course of Study"
+      placeholder2="School Name - (Year of Graduation)"
+      placeholder3="Grade(GPA)"
+      addButtonText="Add Education"
+     />
     </section>
 
     <div className="flex flex-row justify-between flex-grow-1 ">

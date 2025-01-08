@@ -28,7 +28,7 @@ const Experience = () => {
       </div>
      </header>
      <p className="normal-text">Review your experience history.</p>
-     <ExperienceList />
+     <ExperienceList placeholder1="Your position & company here" placeholder2="Location - (Start and End date)"  placeholder3="Impressive achievements here" addButtonText="Add Experience" />
     </section>
 
     <div className="flex flex-row justify-between flex-grow-1 ">

@@ -5,7 +5,12 @@ import AISparkle from "../../assets/GreySparkle.svg"
 import GreenSparkle from "../../assets/GreenSparkle.svg"
 import PlusCircle from "../../assets/PlusCircleGreen.svg"
 
-const ExperienceList = () => {
+const ExperienceList = ({
+ placeholder1,
+ placeholder2,
+ placeholder3,
+ addButtonText,
+}) => {
  const [companyPosition, setCompanyPostion] = useState("")
  const [workLocation, setWorkLocation] = useState("")
  const [achievements, setAchievements] = useState("")
@@ -87,7 +92,7 @@ const ExperienceList = () => {
       <input
        type="text"
        className="experienceInput text-base font-lato font-semibold bg-gray-100 border-none focus:border-transparent"
-       placeholder="Your position & company here"
+       placeholder={placeholder1}
        value={companyPosition}
        onChange={(e) => setCompanyPostion(e.target.value)}
       />
@@ -95,7 +100,7 @@ const ExperienceList = () => {
       <input
        className="experienceInput h-[24px] font-light mt-2 "
        type="text"
-       placeholder="Location - (Start and End Date)"
+       placeholder={placeholder2}
        value={workLocation}
        onChange={(e) => setWorkLocation(e.target.value)}
       />
@@ -103,7 +108,7 @@ const ExperienceList = () => {
        <input
         type="text"
         className="experienceInput mt-4"
-        placeholder="Impressive achievements here"
+        placeholder={placeholder3}
         value={achievements}
         onChange={(e) => setAchievements(e.target.value)}
        />
@@ -123,7 +128,7 @@ const ExperienceList = () => {
      <div className="flex flex-row h-[18px] mt-3">
       <img className="h-[18px] w-[18px] mr-[2px]" src={PlusCircle} alt="" />
       <p className="text-xs text-primary border-b-[1px] border-primary font-semibold font-lato">
-       Add Experience
+       {addButtonText}
       </p>
      </div>
     </section>
