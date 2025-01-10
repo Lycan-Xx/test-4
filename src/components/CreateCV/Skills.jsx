@@ -1,9 +1,30 @@
-import React from "react"
+import {useState} from "react"
 import AISparkle from "../../assets/GreenSparkle.svg"
 import { useTemplate } from "../../context/TemplateContext"
+import { PiPencilSimple } from "react-icons/pi"
+import { FaTimes } from "react-icons/fa"
+import { FaTicket } from "react-icons/fa6"
 
 const Skills = () => {
- const { selectedTemplate } = useTemplate()
+  const { selectedTemplate } = useTemplate()
+
+  const [inputValue, setInputValue] = useState('');
+  const [skillsList, setSkillsList] = useState([]);
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleAddSkill = () => {
+    if (inputValue && !skillsList.includes(inputValue)) {
+      setSkillsList((prevSkills) => [...prevSkills, inputValue]);
+      setInputValue('');
+    }
+  };
+
+  const handleRemoveSkill = (skillToRemove) => {
+    setSkillsList((prevSkills) => prevSkills.filter((skill) => skill !== skillToRemove));
+  }
 
  return (
   <main
@@ -28,22 +49,28 @@ const Skills = () => {
       </div>
      </header>
      <p className="normal-text">Highlight 8 - 10 of your top skills.</p>
-     <div className="upper-input-container">
-      <div className="input-container">
-       <input
-        className="input rounded-[40px] h-12 "
-        type="text"
-        placeholder="Skill"
-       />
-      </div>
-      <div className="input-container">
-       {/* <input
-        className="input rounded-[40px] h-12"
-        type="text"
-        placeholder="Last Name"
-       /> */}
+     <div className="flex flex-row justify-between items-center align-middle">
+      <h4 className="font-bold font-lato md:text-xl">Career Skills</h4>
+      <div className="rounded-full ring-1 p-2 bg-gray-100 ring-gray-300 flex items-center justify-center text-base hover:cursor-pointer">
+       <PiPencilSimple />
       </div>
      </div>
+     <article className="flex flex-row">
+      {skillsList.map((skill, index) => (
+       <li key={index}>
+        {skill} <FaTimes onClick={() => handleRemoveSkill(skill)} />
+       </li>
+      ))}
+      <div className="flex flex-row justify-between">
+       <input
+        value={inputValue}
+        onChange={handleInputChange}
+        placeholder="Add Skills"
+        type="text"
+             />
+             <FaTicket onClick={handleAddSkill} />
+      </div>
+     </article>
     </section>
 
     <div className="flex flex-row justify-between flex-grow-1 ">
