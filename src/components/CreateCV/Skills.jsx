@@ -1,30 +1,32 @@
-import {useState} from "react"
+import { useState } from "react"
 import AISparkle from "../../assets/GreenSparkle.svg"
 import { useTemplate } from "../../context/TemplateContext"
-import { PiPencilSimple } from "react-icons/pi"
+import { PiPencilSimple, PiSparkle } from "react-icons/pi"
 import { FaTimes } from "react-icons/fa"
-import { FaTicket } from "react-icons/fa6"
+import { TiTickOutline } from "react-icons/ti"
 
 const Skills = () => {
-  const { selectedTemplate } = useTemplate()
+ const { selectedTemplate } = useTemplate()
 
-  const [inputValue, setInputValue] = useState('');
-  const [skillsList, setSkillsList] = useState([]);
+ const [inputValue, setInputValue] = useState("")
+ const [skillsList, setSkillsList] = useState([])
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
+ const handleInputChange = (e) => {
+  setInputValue(e.target.value)
+ }
 
-  const handleAddSkill = () => {
-    if (inputValue && !skillsList.includes(inputValue)) {
-      setSkillsList((prevSkills) => [...prevSkills, inputValue]);
-      setInputValue('');
-    }
-  };
-
-  const handleRemoveSkill = (skillToRemove) => {
-    setSkillsList((prevSkills) => prevSkills.filter((skill) => skill !== skillToRemove));
+ const handleAddSkill = () => {
+  if (inputValue && !skillsList.includes(inputValue)) {
+   setSkillsList((prevSkills) => [...prevSkills, inputValue])
+   setInputValue("")
   }
+ }
+
+ const handleRemoveSkill = (skillToRemove) => {
+  setSkillsList((prevSkills) =>
+   prevSkills.filter((skill) => skill !== skillToRemove)
+  )
+ }
 
  return (
   <main
@@ -55,20 +57,46 @@ const Skills = () => {
        <PiPencilSimple />
       </div>
      </div>
-     <article className="flex flex-row">
+     <article className="flex flex-row gap-2 md:gap-3 text-gray-600 flex-wrap">
       {skillsList.map((skill, index) => (
-       <li key={index}>
+       <li
+        className="ring-1 ring-primary flex flex-row gap-2 rounded-[19px] bg-primary bg-opacity-15 items-center justify-center px-3 py-[6px]"
+        key={index}
+       >
         {skill} <FaTimes onClick={() => handleRemoveSkill(skill)} />
        </li>
       ))}
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between items-center text-gray-600  ">
        <input
+        className="focus:outline-none max-w-20"
         value={inputValue}
         onChange={handleInputChange}
         placeholder="Add Skills"
         type="text"
-             />
-             <FaTicket onClick={handleAddSkill} />
+       />
+       <TiTickOutline
+        className="text-primary text-xl"
+        onClick={handleAddSkill}
+       />
+      </div>
+     </article>
+     <article className="bg-gray-100 rounded-2xl p-3 md:p-4 flex flex-col text-gray-500 md:h-[169px] md:mt-16">
+      <header className="flex flex-row font-lato gap-1">
+       {" "}
+       <h4 className="font-bold text-xl text-black ">Cover Letter</h4>
+       <div className="flex flex-row items-center justify-center text-sm ">
+        <PiSparkle />
+        <h6 className="border-b-[1px] border-gray-500 font-bold">AI</h6>
+       </div>
+      </header>
+      <textarea
+       className=" w-full h-full focus:outline-none bg-gray-100 whitespace-normal"
+       placeholder="Using our AI tool, create a cover letter in a single click. By doing this, you might improve your chances of employment!"
+       type="text"
+      />
+      <div className="flex flex-row gap-1 text-primary items-center justify-end">
+       <PiSparkle />
+       <p className="border-b-2 border-primary ">Generate</p>
       </div>
      </article>
     </section>
