@@ -14,9 +14,9 @@ const PersonalDetails = ({ onNext }) => {
   <main
    data-aos="fade-up"
    data-aos-duration="500"
-   className="flex flex-col md:flex-row gap-[30px] md:gap-[130px] justify-between w-screen px-[10vw]"
+   className="flex flex-col md:flex-row md:justify-between max-w-screen"
   >
-   <section className="md:w-full md:min-w-1/2 flex flex-col  h-screen">
+   <section className="md:max-w-1/2 flex flex-col h-screen">
     {/* <header className="flex flex-row mx-auto justify-between w-full mb-[48px]">
      <div className="flex flex-col">
       <h4 className="font-bold text-[40px] leading-[130%]">
@@ -93,7 +93,7 @@ const PersonalDetails = ({ onNext }) => {
       Back
      </button>
      <Link
-      to="create-cv/education"
+      to="/create-cv/education"
       className="rounded-[40px] text-white flex justify-center items-center  bg-primary font-lato px-[24px]"
      >
       Save & Next

@@ -32,7 +32,7 @@ const Skills = () => {
   <main
    data-aos="fade-up"
    data-aos-duration="500"
-   className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center px-[10vw]"
+   className="flex flex-col md:flex-row md:justify-between w-full justify-center"
   >
    <section
     className="md:w-[50vw]  flex flex-col justify-between  h-screen"
@@ -43,7 +43,7 @@ const Skills = () => {
       <h5 className="font-lato font-bold text-2xl whitespace-nowrap">
        Skills.
       </h5>
-      <div className="flex flex-row text-primary align-middle items-center">
+      <div className="flex flex-row text-primary align-middle items-center cursor-pointer">
        <img className="text-primary" src={AISparkle} alt="" />
        <p className="whitespace-nowrap  border-b-primary border-b-[1px]">
         Generate Cover Letter
@@ -80,7 +80,7 @@ const Skills = () => {
        />
       </div>
      </article>
-     <article className="bg-gray-100 rounded-2xl p-3 md:p-4 flex flex-col text-gray-500 md:h-[169px] md:mt-16">
+     <article className="bg-gray-100 rounded-2xl p-3 md:p-4 flex flex-col text-gray-500 md:h-[180px] md:mt-16 gap-2">
       <header className="flex flex-row font-lato gap-1">
        {" "}
        <h4 className="font-bold text-xl text-black ">Cover Letter</h4>
@@ -90,11 +90,11 @@ const Skills = () => {
        </div>
       </header>
       <textarea
-       className=" w-full h-full focus:outline-none bg-gray-100 whitespace-normal"
+       className=" w-full h-full focus:outline-none bg-gray-100 whitespace-normal h-full"
        placeholder="Using our AI tool, create a cover letter in a single click. By doing this, you might improve your chances of employment!"
        type="text"
       />
-      <div className="flex flex-row gap-1 text-primary items-center justify-end">
+      <div className="flex flex-row gap-1 text-primary items-center justify-end hover:cursor-pointer">
        <PiSparkle />
        <p className="border-b-2 border-primary ">Generate</p>
       </div>

@@ -9,7 +9,7 @@ const Experience = () => {
   <main
    data-aos="fade-up"
    data-aos-duration="500"
-   className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center px-[10vw]"
+   className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center"
   >
    <section
     className="md:w-[50vw] flex flex-col justify-between  h-screen"

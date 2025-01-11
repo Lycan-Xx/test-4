@@ -12,9 +12,9 @@ const Summary = () => {
   <main
    data-aos="fade-up"
    data-aos-duration="500"
-   className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center px-[10vw]"
+   className="flex flex-col md:flex-row md:justify-between w-full max-w-screen justify-center"
   >
-   <section className="md:w-[50vw] flex flex-col gap-[5%]  h-screen">
+   <section className="flex flex-col gap-[5%]  h-screen">
     <form className="" action="">
      <header className="flex flex-row justify-between">
       <h5 className="font-lato font-bold text-2xl whitespace-nowrap">
