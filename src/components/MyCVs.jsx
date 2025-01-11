@@ -25,7 +25,7 @@ const MyCVs = () => {
 
  return (
   <main
-   className="flex flex-col font-lato pt-[40px] px-[24px]"
+   className="flex flex-col font-lato pt-[40px] pl-8"
    data-aos="fade-up"
    data-aos-duration="500"
   >

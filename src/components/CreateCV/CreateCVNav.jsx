@@ -39,7 +39,7 @@ const CreateCVNav = () => {
  }
 
  return (
-  <main className="flex flex-col md:flex-row justify-between w-full items-center align-middle mb-6 bg-black">
+  <main className="flex flex-col md:flex-row justify-between w-full items-center align-middle mb-6">
    <nav className="flex flex-row md:gap-[6px] gap-[8px] justify-center items-center">
     {CVLinks.map(({ id, text, link }) => {
      const isActive = activeLink === link

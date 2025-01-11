@@ -6,14 +6,14 @@ export default function Layout() {
  const location = useLocation()
 
  return (
-  <section className="flex flex-col md:flex-row max-w-[100vw] overflow-x-hidden">
+  <main className="flex flex-row">
    <nav className="block ">
     {!location.pathname.startsWith("/create-cv") && <SideNav />}
    </nav>
 
-   <main className="pt-[3%] pl-8">
+   <main className="pt-[3%]">
     <Outlet />
    </main>
-  </section>
+  </main>
  )
 }

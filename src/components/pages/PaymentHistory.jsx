@@ -7,7 +7,7 @@ const PaymentHistory = () => {
   <main
    data-aos="fade-up"
    data-aos-duration="500"
-   className="flex flex-col pt-[40px] "
+   className="flex flex-col pt-[40px] pl-8 "
   >
    <header className="flex flex-col mx-auto justify-between w-full mb-[48px] gap-[20px]">
     <div className="flex flex-col gap-0 lg:gap-4">

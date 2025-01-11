@@ -7,7 +7,7 @@ const CoverLetter = () => {
  const [value, setValue] = useState("")
 
  return (
-  <main className="flex flex-col md:flex-row gap-[50px] md:gap-[130px]">
+  <main className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] pl-8">
    <section>
     <header className="flex flex-row mx-auto justify-between w-full mb-[48px]">
      <div className="flex flex-col">

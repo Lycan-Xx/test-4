@@ -4,8 +4,7 @@ import MyCVs from "../MyCVs"
 
 const Homepage = () => {
  return (
-  <div>
-   {/* <Header /> */}
+  <div className="">
    <MyCVs />
   </div>
  )
