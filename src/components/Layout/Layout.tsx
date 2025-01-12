@@ -11,7 +11,7 @@ export default function Layout() {
     {!location.pathname.startsWith("/create-cv") && <SideNav />}
    </nav>
 
-   <main className="pt-[3%]">
+   <main className="pt-[3%] overflow-x-clip">
     <Outlet />
    </main>
   </main>

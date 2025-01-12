@@ -14,7 +14,7 @@ const PersonalDetails = ({ onNext }) => {
   <main
    data-aos="fade-up"
    data-aos-duration="500"
-   className="flex flex-col md:flex-row md:justify-between max-w-screen"
+   className="flex flex-col md:flex-row md:justify-between w-full"
   >
    <section className="md:max-w-1/2 flex flex-col h-screen">
     {/* <header className="flex flex-row mx-auto justify-between w-full mb-[48px]">

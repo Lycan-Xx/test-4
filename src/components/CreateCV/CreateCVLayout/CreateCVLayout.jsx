@@ -4,9 +4,11 @@ import CreateCVNav from "../CreateCVNav"
 
 const CreateCVLayout = ({ showSideNav = false }) => {
  return (
-  <main className="flex flex-col justify-center items-center bg-slate-300 w-full h-full">
-   <CreateCVNav />
-   <Outlet />
+  <main className="w-screen ">
+   <div className="flex flex-col mx-auto md:px-[100px] lg:px-[152px] overflow-x-clip">
+    <CreateCVNav />
+    <Outlet />
+   </div>
   </main>
  )
 }
