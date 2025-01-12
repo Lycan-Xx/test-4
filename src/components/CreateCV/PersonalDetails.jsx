@@ -5,7 +5,6 @@ import ProfilePic from "../../assets/PersonalDetailsProfilePic.jpg"
 import CameraIcon from "../../assets/CameraIcon.svg"
 import { useTemplate } from "../../context/TemplateContext"
 import { Link } from "react-router-dom"
-// import "react-quill/dist/quill.snow.css"
 
 const PersonalDetails = ({ onNext }) => {
  const { selectedTemplate } = useTemplate()
@@ -17,22 +16,14 @@ const PersonalDetails = ({ onNext }) => {
    className="flex flex-col md:flex-row md:justify-between w-full"
   >
    <section className="md:w-[100%] flex flex-col h-screen md:mr-32">
-    {/* <header className="flex flex-row mx-auto justify-between w-full mb-[48px]">
-     <div className="flex flex-col">
-      <h4 className="font-bold text-[40px] leading-[130%]">
-       Personal Details.
-      </h4>
-      <p className="font-poppins font-light text-[20px] mt-[10px] text-greytext">
-      How do you want your employers to get in touch with you?
-      </p>
-     </div>
-    </header> */}
     <form action="">
      <header className="flex flex-row justify-between">
-      <h5 className="font-lato font-bold text-2xl">Personal details</h5>
+      <h5 className="font-lato font-bold text-2xl whitespace-nowrap">
+       Personal details
+      </h5>
       <div className="flex flex-row text-primary align-middle items-center">
        <img className="text-primary" src={AISparkle} alt="" />
-       <p className="whitespace-nowrap  border-b-primary border-b-[1px]">
+       <p className="whitespace-nowrap  border-b-primary border-b-[1px] font-semibold cursor-pointer">
         Generate Complete CV
        </p>
       </div>
@@ -102,12 +93,12 @@ const PersonalDetails = ({ onNext }) => {
    </section>
    {selectedTemplate ? (
     <img
-     className="h-full w-full bg-gray-100 rounded-2xl py-6 px-10"
+     className="hidden md:block h-full w-full bg-gray-100 rounded-2xl py-6 px-10"
      src={selectedTemplate.template}
      alt={selectedTemplate.name}
     />
    ) : (
-    <p>Select a template to preview here</p>
+    <p className="hidden md:block">Select a template to preview here</p>
    )}
   </main>
  )

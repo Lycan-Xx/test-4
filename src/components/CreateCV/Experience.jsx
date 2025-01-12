@@ -12,7 +12,7 @@ const Experience = () => {
    className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center"
   >
    <section
-    className="md:w-[50vw] flex flex-col justify-between  h-screen"
+    className="md:w-[100%] flex flex-col justify-between  h-screen"
     action=""
    >
     <section>
@@ -28,7 +28,12 @@ const Experience = () => {
       </div>
      </header>
      <p className="normal-text">Review your experience history.</p>
-     <ExperienceList placeholder1="Your position & company here" placeholder2="Location - (Start and End date)"  placeholder3="Impressive achievements here" addButtonText="Add Experience" />
+     <ExperienceList
+      placeholder1="Your position & company here"
+      placeholder2="Location - (Start and End date)"
+      placeholder3="Impressive achievements here"
+      addButtonText="Add Experience"
+     />
     </section>
 
     <div className="flex flex-row justify-between flex-grow-1 ">
@@ -42,12 +47,12 @@ const Experience = () => {
    </section>
    {selectedTemplate ? (
     <img
-     className="h-[100vh] w-full"
+     className="hidden md:block h-full w-full bg-gray-100 rounded-2xl py-6 px-10"
      src={selectedTemplate.template}
      alt={selectedTemplate.name}
     />
    ) : (
-    <p>Select a template to preview here</p>
+    <p className="hidden md:block">Select a template to preview here</p>
    )}
   </main>
  )

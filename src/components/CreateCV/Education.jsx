@@ -13,7 +13,7 @@ const Education = () => {
    className="flex flex-col md:flex-row gap-[50px] md:gap-[130px] w-full justify-center"
   >
    <section
-    className="md:w-[50vw] flex flex-col justify-between h-screen"
+    className="md:w-full flex flex-col justify-between h-screen"
     action=""
    >
     <section>
@@ -48,12 +48,12 @@ const Education = () => {
    </section>
    {selectedTemplate ? (
     <img
-     className="h-[100vh] w-full"
+     className="hidden md:block h-full w-full bg-gray-100 rounded-2xl py-6 px-10"
      src={selectedTemplate.template}
      alt={selectedTemplate.name}
     />
    ) : (
-    <p>Select a template to preview here</p>
+    <p className="hidden md:block">Select a template to preview here</p>
    )}
   </main>
  )

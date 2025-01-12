@@ -35,7 +35,7 @@ const Skills = () => {
    className="flex flex-col md:flex-row md:justify-between w-full justify-center"
   >
    <section
-    className="md:w-[50vw]  flex flex-col justify-between  h-screen"
+    className="md:w-full md:mr-32 flex flex-col justify-between  h-screen"
     action=""
    >
     <section>
@@ -90,7 +90,7 @@ const Skills = () => {
        </div>
       </header>
       <textarea
-       className=" w-full h-full focus:outline-none bg-gray-100 whitespace-normal h-full"
+       className=" w-full focus:outline-none bg-gray-100 whitespace-normal h-full"
        placeholder="Using our AI tool, create a cover letter in a single click. By doing this, you might improve your chances of employment!"
        type="text"
       />
@@ -112,12 +112,12 @@ const Skills = () => {
    </section>
    {selectedTemplate ? (
     <img
-     className="h-[100vh] w-full"
+     className="hidden md:block h-full w-full bg-gray-100 rounded-2xl py-6 px-10 "
      src={selectedTemplate.template}
      alt={selectedTemplate.name}
     />
    ) : (
-    <p>Select a template to preview here</p>
+    <p className="hidden md:block">Select a template to preview here</p>
    )}
   </main>
  )
