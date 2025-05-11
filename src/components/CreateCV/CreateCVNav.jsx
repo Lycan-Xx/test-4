@@ -61,7 +61,7 @@ const CreateCVNav = () => {
      )
     })}
    </nav>
-   <button className="mx-auto md:m-0 py-[6px] px-[20.5px] md:px-6 md:py-2 text-base whitespace-nowrap rounded-[20px] bg-primary flex flex-row justify-center items-center">
+   <button className=" md:m-0 py-[6px] px-[20.5px] md:px-6 md:py-2 text-base whitespace-nowrap rounded-[20px] bg-primary flex flex-row justify-center items-center w-[90vw] md:w-min mt-6 md:mt-0">
     <img className="w-[12px] h-[12px]" src={DownloadIcon} alt="Download" />
     <p className="text-white text-[15px] font-bold ml-[8px] font-lato">
      Import LinkedIn

@@ -13,7 +13,7 @@ const TemplateModal = ({ imageSrc, onClose }) => {
 
  return (
   <main
-   className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 transition-opacity ease-in-out duration-1000 w-full h-screen ${
+   className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-5 z-50 transition-opacity ease-in-out duration-1000  h-screen ${
     isVisible ? "opacity-100" : "opacity-0"
    } `}
   >
