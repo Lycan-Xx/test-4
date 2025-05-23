@@ -117,3 +117,7 @@
  flex-direction: row;
  justify-content: space-between;
 }
+
+.corporate_background {
+  background-image: url("/src/assets/cbackground.jpg");
+}

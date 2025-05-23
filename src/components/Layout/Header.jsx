@@ -10,16 +10,16 @@ const Header = () => {
      <img src={LogoBeeCV} alt="" />
     </div>
     <ul className="flex-1 flex flex-row gap-[24px] font-semibold font-lato text-[20px] text-[#344054] ">
-     <a className="border-b-4 text-primary  border-primary" href="">Dashboard</a>
+     <a className="border-b-4 text-primary  border-primary" href="">Home</a>
      <a href="">About </a>
-     <a href="">Templates</a>
-     <a href="">Pricing</a>
-     <a href="">FAQs</a>
+     <a href="">Services</a>
+     <a href="">Testimonials</a>
+     <a href="">Contact</a>
     </ul>
-    <div className="profileBubble flex-1 flex flex-row justify-end gap-[16px]">
+    {/* <div className="profileBubble flex-1 flex flex-row justify-end gap-[16px]">
      <p className="font-bold font-lato text-[20px] ">Ozzy Abel</p>
      <img src="" alt="" />
-    </div>
+    </div> */}
    </div>
   </header>
  )

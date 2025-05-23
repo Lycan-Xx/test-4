@@ -1,11 +1,12 @@
 import React from "react"
 import Header from "../Layout/Header"
-import MyCVs from "../MyCVs"
+import Hero from "../Hero"
 
 const Homepage = () => {
  return (
-  <div className="">
-   <MyCVs />
+   <div className="">
+    <Header />
+    <Hero />
   </div>
  )
 }

@@ -3,13 +3,13 @@ import "./index.css"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Homepage from "./components/pages/Homepage"
 import { TemplateProvider } from "./context/TemplateContext"
-import Templates from "./components/pages/Templates"
-import Settings from "./components/pages/Settings"
-import PaymentHistory from "./components/pages/PaymentHistory"
+import Templates from "./components/pages/BusinessServices"
+import Settings from "./components/pages/WhyChooseUs"
+import PaymentHistory from "./components/pages/CareerServices"
 import CVCreatorApp from "./components/CreateCV/CVCreatorApp"
 import Layout from "./components/Layout/Layout"
 import { NavProvider } from "./context/NavContext"
-import UpgradeSubscription from "./components/pages/UpgradeSubscription"
+import UpgradeSubscription from "./components/pages/ContactUs"
 
 function App() {
  return (
