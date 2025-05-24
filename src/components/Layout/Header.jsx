@@ -11,10 +11,10 @@ const Header = () => {
     </div>
     <ul className="flex-1 flex flex-row gap-[24px] font-semibold font-lato text-[20px] text-[#344054] ">
      <a className="border-b-4 text-primary  border-primary" href="">Home</a>
-     <a href="">About </a>
-     <a href="">Services</a>
-     <a href="">Testimonials</a>
-     <a href="">Contact</a>
+     <Link to="/about"> About </Link>
+      <Link to="/services">Services</Link>
+      <Link to="/testimonials">Testimonials</Link>
+      <Link to="/contact">Contact</Link>
     </ul>
     {/* <div className="profileBubble flex-1 flex flex-row justify-end gap-[16px]">
      <p className="font-bold font-lato text-[20px] ">Ozzy Abel</p>
