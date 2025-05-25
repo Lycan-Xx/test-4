@@ -4,21 +4,32 @@ import { Link, useLocation } from "react-router-dom"
 
 const Header = () => {
  const [isOpen, setIsOpen] = useState(false);
+ const [servicesDropdown, setServicesDropdown] = useState(false);
  const location = useLocation();
 
-  const navLinks = [
+ const serviceLinks = [
+  { path: "/business-services", label: "Business Services" },
+  { path: "/career-services", label: "Career Services" },
+ ];
+
+ const navLinks = [
   { path: "/", label: "Home" },
   { path: "/about", label: "About" },
-  { path: "/CareerServices", label: "Career Services" },
-  { path: "/BusinessServices", label: "Business Services" },
+  { 
+    path: "/services", 
+    label: "Services",
+    hasDropdown: true,
+    dropdownItems: serviceLinks
+  },
   { path: "/WhyUs", label: "Why Choose Us" },
   { path: "/Contact", label: "Contact" },
-  {path: "/Testimonial", label: "Testimonial" }
+  { path: "/Testimonial", label: "Testimonial" }
  ];
 
  const isActive = (path) => {
   return location.pathname === path ? "border-b-4 text-primary border-primary" : "";
  };
+
  return (
   <header className="bg-white shadow font-lato py-[41px] relative">
    <div className="container mx-auto flex justify-between items-center px-4">
@@ -41,13 +52,55 @@ const Header = () => {
     {/* Desktop Navigation */}
     <ul className="hidden lg:flex flex-row gap-[24px] font-semibold font-lato text-[20px] text-[#344054]">
      {navLinks.map((link) => (
-      <Link
-       key={link.path}
-       to={link.path}
-       className={`hover:text-primary transition-colors ${isActive(link.path)}`}
-      >
-       {link.label}
-      </Link>
+      <div key={link.path} className="relative">
+        {link.hasDropdown ? (
+          <div 
+            className="relative"
+            onMouseEnter={() => setServicesDropdown(true)}
+            onMouseLeave={() => setServicesDropdown(false)}
+          >
+            <button 
+              className={`hover:text-primary transition-colors flex items-center gap-2 ${
+                location.pathname.includes('/services') ? 'text-primary' : ''
+              }`}
+            >
+              {link.label}
+              <svg 
+                className={`w-4 h-4 transform transition-transform ${
+                  servicesDropdown ? 'rotate-180' : ''
+                }`} 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            {/* Services Dropdown */}
+            {servicesDropdown && (
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
+                {link.dropdownItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        ) : (
+          <Link
+            to={link.path}
+            className={`hover:text-primary transition-colors ${isActive(link.path)}`}
+          >
+           {link.label}
+          </Link>
+        )}
+      </div>
      ))}
     </ul>
 
