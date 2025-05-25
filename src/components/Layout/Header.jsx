@@ -22,8 +22,8 @@ const Header = () => {
     dropdownItems: serviceLinks
   },
   { path: "/WhyUs", label: "Why Choose Us" },
-  { path: "/Contact", label: "Contact" },
-  { path: "/Testimonial", label: "Testimonial" }
+  { path: "/Testimonial", label: "Testimonial" },
+    { path: "/Contact", label: "Contact" }
  ];
 
  const isActive = (path) => {
