@@ -8,7 +8,7 @@ import BusinessServices from "./components/pages/BusinessServices"
 import CareerServices from "./components/pages/CareerServices"
 import WhyChooseUs from "./components/pages/WhyChooseUs"
 import ContactUs from "./components/pages/ContactUs"
-import Testimonial from "./components/pages/Testimonial"
+import Testimonial from "./components/pages/Testimonial.tsx"
 
 function App() {
  return (
