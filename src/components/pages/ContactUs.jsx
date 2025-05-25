@@ -98,7 +98,7 @@ const ContactUs = () => {
           </div>
 
           {/* Contact Info Cards */}
-          <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-2xl border border-gray-100">
+          <div className="bg-white bg-opacity-65 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-2xl border border-gray-100">
             <div className="grid lg:grid-cols-2 gap-8">
               {contactInfo.map((item, index) => (
                 <div
