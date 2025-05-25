@@ -5,11 +5,10 @@ export default function Layout() {
  const location = useLocation()
 
  return (
-  <main className="flex flex-row">   
-
-   <main className="pt-[3%] overflow-x-clip">
-    <Outlet />
-   </main>
+  <main className="flex flex-col min-h-screen w-full">   
+    <div className="flex-grow">
+      <Outlet />
+    </div>
   </main>
  )
 }
