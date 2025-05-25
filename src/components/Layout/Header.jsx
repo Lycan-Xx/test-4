@@ -6,12 +6,14 @@ const Header = () => {
  const [isOpen, setIsOpen] = useState(false);
  const location = useLocation();
 
- const navLinks = [
+  const navLinks = [
   { path: "/", label: "Home" },
   { path: "/about", label: "About" },
-  { path: "/services", label: "Services" },
-  { path: "/testimonials", label: "Testimonials" },
-  { path: "/contact", label: "Contact" }
+  { path: "/CareerServices", label: "Career Services" },
+  { path: "/BusinessServices", label: "Business Services" },
+  { path: "/WhyUs", label: "Why Choose Us" },
+  { path: "/Contact", label: "Contact" },
+  {path: "/Testimonial", label: "Testimonial" }
  ];
 
  const isActive = (path) => {

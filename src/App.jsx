@@ -8,6 +8,7 @@ import CareerServices from "./components/pages/CareerServices"
 import BusinessServices from "./components/pages/BusinessServices"
 import WhyChooseUs from "./components/pages/WhyChooseUs"
 import ContactUs from "./components/pages/ContactUs"
+import Testimonial from "./components/pages/Testimonial"
 
 function App() {
  return (
@@ -20,6 +21,7 @@ function App() {
      <Route path="/BusinessServices" element={<BusinessServices />} />
      <Route path="/WhyUs" element={<WhyChooseUs />} />
      <Route path="/Contact" element={<ContactUs />} />
+     <Route path="/Testimonial" element={<Testimonial />} />
     </Route>
    </Routes>
   </Router>
