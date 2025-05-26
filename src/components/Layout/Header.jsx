@@ -7,6 +7,7 @@ import { FiChevronDown } from "react-icons/fi"
 const Header = () => {
  const [isOpen, setIsOpen] = useState(false);
  const [servicesDropdown, setServicesDropdown] = useState(false);
+ const [activeSection, setActiveSection] = useState('hero');
  const location = useLocation();
  const dropdownRef = useRef(null);
 
@@ -25,22 +26,38 @@ const Header = () => {
   },
  ];
 
+ const scrollToSection = (sectionId) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    const headerOffset = 100;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+ };
+
+ // Update navLinks
  const navLinks = [
-  { path: "/", label: "Home" },
-  { path: "/about", label: "About" },
+  { path: "hero", label: "Home" },
+  { path: "about", label: "About" },
   { 
-    path: "/services", 
+    path: "services", 
     label: "Services",
     hasDropdown: true,
     dropdownItems: serviceLinks
   },
-  { path: "/WhyUs", label: "Why Choose Us" },
-  { path: "/Testimonial", label: "Testimonial" },
-  { path: "/Contact", label: "Contact" }
+  { path: "WhyUs", label: "Why Choose Us" },
+  { path: "Testimonial", label: "Testimonial" },
+  { path: "Contact", label: "Contact" }
  ];
 
+ // Update isActive to use activeSection instead of location
  const isActive = (path) => {
-  return location.pathname === path ? "border-b-4 text-primary border-primary" : "";
+  return activeSection === path ? "border-b-4 text-primary border-primary" : "";
  };
 
  // Close dropdown when clicking outside
@@ -61,8 +78,38 @@ const Header = () => {
    setServicesDropdown(!servicesDropdown);
  };
 
+ // Add useEffect for scroll tracking
+ useEffect(() => {
+  const handleScroll = () => {
+    const scrollPos = window.scrollY;
+    
+    navLinks.forEach((link) => {
+      const section = document.getElementById(link.path);
+      if (section) {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (scrollPos >= sectionTop - 100 && scrollPos < sectionTop + sectionHeight - 100) {
+          setActiveSection(link.path);
+        }
+      }
+    });
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+ }, [navLinks]);
+
+ // Add navigation handler
+ const handleServiceClick = (path) => {
+  setServicesDropdown(false);
+  setIsOpen(false);
+ };
+
  return (
-  <header className="bg-white shadow font-lato py-[27px] relative">
+  <header className="fixed top-0 left-0 right-0 bg-white shadow-md font-lato py-[27px] z-50">
    <div className="container mx-auto flex justify-between items-center px-4">
     <div className="font-openSans font-semibold text-2xl leading-[120%]">
      <Link to="/">
@@ -113,7 +160,7 @@ const Header = () => {
                     <Link
                       key={item.path}
                       to={item.path}
-                      onClick={() => setServicesDropdown(false)}
+                      onClick={() => handleServiceClick(item.path)}
                       className="flex items-start gap-3 p-4 rounded-lg hover:bg-orange-50 hover:border-orange-200 border border-transparent transition-all duration-200 group"
                     >
                       <div className="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600 group-hover:bg-orange-200 transition-colors">
@@ -145,7 +192,11 @@ const Header = () => {
           </div>
         ) : (
           <Link
-            to={link.path}
+            to={`/#${link.path}`}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(link.path);
+            }}
             className={`hover:text-primary transition-colors ${isActive(link.path)}`}
           >
            {link.label}
@@ -184,10 +235,7 @@ const Header = () => {
                       key={item.path}
                       to={item.path}
                       className="block py-2 pl-4 text-gray-600 hover:text-primary"
-                      onClick={() => {
-                        setIsOpen(false);
-                        setServicesDropdown(false);
-                      }}
+                      onClick={() => handleServiceClick(item.path)}
                     >
                       <span className="inline-flex items-center gap-2">
                         {item.icon}

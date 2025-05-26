@@ -3,12 +3,10 @@ import React from "react"
 import Header from "./Header"
 
 export default function Layout() {
- const location = useLocation()
-
  return (
   <main className="flex flex-col min-h-screen w-full">   
-    <Header />
-    <div className="flex-grow">
+    <Header className="fixed top-0 left-0 right-0 z-50" />
+    <div className="flex-grow pt-[100px]"> {/* Add padding-top to account for fixed header */}
       <Outlet />
     </div>
   </main>
