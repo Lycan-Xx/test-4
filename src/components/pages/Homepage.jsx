@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import Hero from '../Hero'
 import About from './About'
@@ -8,6 +8,16 @@ import ContactUs from './ContactUs'
 
 const HomePage = () => {
   const location = useLocation()
+  
+  useEffect(() => {
+    // Check for hash in URL when component mounts
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
 
   return (
     <div className="flex flex-col">

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import LogoBeeCV from "../../assets/LogoBeeCV.svg";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaBriefcase, FaUserFriends } from "react-icons/fa";
 import { FiChevronDown, FiX } from "react-icons/fi";
 
@@ -23,6 +23,7 @@ const Header = () => {
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const location = useLocation();
+  const navigate = useNavigate(); // Add this
   const dropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
@@ -42,7 +43,7 @@ const Header = () => {
   ];
 
   const navLinks: NavLinkItem[] = [
-    { path: "#hero", label: "Home" },
+    { path: "/", label: "Home" }, // Updated to root path
     { path: "#about", label: "About" },
     { 
       path: "#services", 
@@ -61,6 +62,12 @@ const Header = () => {
   };
 
   const scrollToSection = (id: string) => {
+    if (location.pathname !== '/') {
+      // If not on homepage, navigate to homepage with hash
+      navigate(`/${id}`);
+      return;
+    }
+    
     const element = document.querySelector(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -68,11 +75,15 @@ const Header = () => {
     handleLinkClick();
   };
 
-  // Update NavLink components to use scrollToSection
+  // Update the renderNavLink function
   const renderNavLink = (path: string) => {
     return (e: React.MouseEvent) => {
       e.preventDefault();
-      scrollToSection(path);
+      if (path === '/') {
+        navigate(path);
+      } else {
+        scrollToSection(path);
+      }
     };
   };
 
@@ -278,7 +289,7 @@ const Header = () => {
                             <NavLink
                               key={item.path}
                               to={item.path}
-                              onClick={handleMobileMenuToggle}
+                              onClick={handleLinkClick} // Updated to use handleLinkClick
                               className="block p-3 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500"
                             >
                               <div className="flex items-center gap-3">
@@ -293,7 +304,14 @@ const Header = () => {
                   ) : (
                     <NavLink
                       to={link.path}
-                      onClick={handleMobileMenuToggle}
+                      onClick={(e) => {
+                        if (link.path.startsWith('#')) {
+                          e.preventDefault();
+                          scrollToSection(link.path);
+                        } else {
+                          handleLinkClick();
+                        }
+                      }}
                       className={({ isActive }) => `block p-3 rounded-lg ${
                         isActive 
                           ? 'bg-primary-50 text-primary-600 font-semibold' 
