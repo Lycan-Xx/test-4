@@ -43,14 +43,9 @@ const Header = () => {
   ];
 
   const navLinks: NavLinkItem[] = [
-    { path: "/", label: "Home" }, // Updated to root path
+    { path: "#hero", label: "Home", hashDropdown: false }, // Updated to root path
     { path: "#about", label: "About" },
-    { 
-      path: "#services", 
-      label: "Services",
-      hasDropdown: true,
-      dropdownItems: serviceLinks
-    },
+    { path: "#services", label: "Services", hasDropdown: true, dropdownItems: serviceLinks},
     { path: "#why-us", label: "Why Choose Us" },
     { path: "#testimonial", label: "Testimonial" },
     { path: "#contact", label: "Contact" }
@@ -62,30 +57,52 @@ const Header = () => {
   };
 
   const scrollToSection = (id: string) => {
+    // Remove any leading # from the id
+    const cleanId = id.replace(/^#/, '');
+    
     if (location.pathname !== '/') {
-      // If not on homepage, navigate to homepage with hash
-      navigate(`/${id}`);
+      navigate(`/#${cleanId}`);
       return;
     }
-    
-    const element = document.querySelector(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      
+      const element = document.getElementById(cleanId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      handleLinkClick();
+    };
+
+const handleServiceLinkClick = (path: string) => {
+  handleLinkClick(); // closes mobile menu and dropdown
+  navigate(path);
+};
+
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      const heroSection = document.getElementById('hero');
+      if (heroSection) {
+        heroSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/');
     }
     handleLinkClick();
   };
 
-  // Update the renderNavLink function
-  const renderNavLink = (path: string) => {
-    return (e: React.MouseEvent) => {
-      e.preventDefault();
-      if (path === '/') {
-        navigate(path);
-      } else {
-        scrollToSection(path);
+  const handleHashNavigation = (hash: string) => {
+    if (location.pathname !== '/') {
+      navigate(`/${hash}`);
+    } else {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
       }
-    };
+    }
+    handleLinkClick();
   };
+  
+  const [isMobileServicesDropdownOpen, setIsMobileServicesDropdownOpen] = useState(false);
 
   // Accessibility: Close dropdowns on escape key
   useEffect(() => {
@@ -128,10 +145,10 @@ const Header = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const handleMobileMenuToggle = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-    setIsServicesDropdownOpen(false);
-  };
+const handleMobileMenuToggle = () => {
+  setIsMobileMenuOpen(!isMobileMenuOpen);
+  setIsMobileServicesDropdownOpen(false);
+};
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
@@ -139,7 +156,8 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link 
-            to="/" 
+            to="/"
+            onClick={handleHomeClick}
             className="inline-flex items-center focus:outline-none focus:ring-2 focus:ring-primary-500"
             aria-label="Home"
           >
@@ -211,7 +229,15 @@ const Header = () => {
                 ) : (
                   <NavLink
                     to={link.path}
-                    onClick={(e) => renderNavLink(link.path)(e)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (link.path.startsWith('#')) {
+                        handleHashNavigation(link.path);
+                      } else {
+                        navigate(link.path);
+                        handleLinkClick();
+                      }
+                    }}
                     className={({ isActive }) => `px-3 py-2 text-gray-700 rounded-lg transition-colors ${
                       isActive 
                         ? 'text-primary-600 font-semibold' 
@@ -273,23 +299,22 @@ const Header = () => {
                   {link.hasDropdown ? (
                     <>
                       <button
-                        onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                        onClick={() => setIsMobileServicesDropdownOpen(!isMobileServicesDropdownOpen)}
                         className="w-full flex justify-between items-center p-3 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                        aria-expanded={isServicesDropdownOpen}
+                        aria-expanded={isMobileServicesDropdownOpen}
                       >
                         <span>{link.label}</span>
-                        <FiChevronDown className={`w-4 h-4 transition-transform ${
-                          isServicesDropdownOpen ? 'rotate-180' : ''
-                        }`} />
+                        <FiChevronDown className={`w-4 h-4 transition-transform ${isMobileServicesDropdownOpen ? 'rotate-180' : ''}`} />
                       </button>
                       
-                      {isServicesDropdownOpen && (
+                      {/* Mobile Navigation Services Dropdown */}
+                      {isMobileServicesDropdownOpen && (
                         <div className="ml-4 space-y-2 border-l-2 border-gray-100 pl-4">
                           {link.dropdownItems?.map((item) => (
                             <NavLink
                               key={item.path}
                               to={item.path}
-                              onClick={handleLinkClick} // Updated to use handleLinkClick
+                              onClick={() => handleServiceLinkClick(item.path)}
                               className="block p-3 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500"
                             >
                               <div className="flex items-center gap-3">
