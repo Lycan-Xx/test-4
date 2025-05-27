@@ -1,4 +1,6 @@
+
 import React from 'react';
+import aboutImage from '../../assets/aboutImages.jpg';
 
 const About = () => {
   return (
@@ -77,7 +79,7 @@ const About = () => {
               {/* Main Image Container */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
                 <img
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                  src={aboutImage}
                   alt="Professional business meeting"
                   className="w-full h-96 lg:h-[500px] object-cover"
                 />

@@ -1,4 +1,6 @@
+
 import React from 'react';
+import cooperateCelebration from '../../assets/Cooperatecelebration.jpg';
 
 const icons = {
   phone: (
@@ -59,7 +61,7 @@ const ContactUs = () => {
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
       {/* Background */}
       <div className="absolute inset-0 z-0 bg-cover bg-center" style={{
-        backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`
+        backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url(${cooperateCelebration})`
       }} />
 
       {/* Overlay decorations */}

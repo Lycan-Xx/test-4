@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import PersonalDetailsProfilePic from '../../assets/PersonalDetailsProfilePic.jpg';
 
 // Consolidated all data and types in the main component file
 interface TestimonialType {
@@ -155,12 +156,11 @@ const Testimonial: React.FC = () => {
           
           {/* Author info */}
           <div className="flex items-center space-x-4 border-t border-opacity-20 pt-4 mt-auto border-white">
-            <div className={`
-              w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg
-              ${isActive ? 'bg-white/20' : 'bg-gradient-to-br from-orange-400 to-orange-600'}
-            `}>
-              {testimonial.initial}
-            </div>
+            <img
+              src={PersonalDetailsProfilePic}
+              alt={testimonial.author}
+              className="w-12 h-12 rounded-full object-cover border-2 border-orange-400"
+            />
             <div>
               <h4 className={`font-bold text-lg ${isActive ? 'text-white' : 'text-gray-900'}`}>
                 {testimonial.author}
