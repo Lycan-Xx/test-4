@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom"
 import React from "react"
-import Header from "./Header"
+import Header from "./Header.tsx"
 
 export default function Layout() {
  return (

@@ -19,15 +19,15 @@ const HomePage = () => {
         <About />
       </section>
       
-      <section id="WhyUs" className="min-h-screen">
+      <section id="why-us" className="min-h-screen">
         <WhyChooseUs />
       </section>
       
-      <section id="Testimonial" className="min-h-screen">
+      <section id="testimonial" className="min-h-screen">
         <Testimonial />
       </section>
       
-      <section id="Contact" className="min-h-screen">
+      <section id="contact" className="min-h-screen">
         <ContactUs />
       </section>
     </div>
