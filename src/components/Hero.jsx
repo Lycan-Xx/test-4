@@ -42,15 +42,25 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 items-start">
-            <button className="group relative bg-white text-gray-900 font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:bg-gray-100 hover:shadow-2xl hover:scale-105 font-lato min-w-[180px]">
-              <span className="relative z-10">LEARN MORE</span>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            </button>
+            <a 
+              href="#about"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-full shadow-lg hover:bg-gray-50 transition-all duration-300 hover:shadow-white/30 transform hover:-translate-y-1 min-w-[180px]"
+            >
+              Learn More
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
             
-            <button className="group relative bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:from-orange-600 hover:to-orange-700 hover:shadow-2xl hover:scale-105 font-lato min-w-[180px]">
-              <span className="relative z-10">CONTACT</span>
-              <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            </button>
+            <a 
+              href="#contact"
+              className="inline-flex items-center justify-center px-8 py-4 bg-orange-500 text-white font-medium rounded-full shadow-lg hover:bg-orange-600 transition-all duration-300 hover:shadow-orange-500/30 transform hover:-translate-y-1 min-w-[180px]"
+            >
+              Contact
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
           </div>
 
 

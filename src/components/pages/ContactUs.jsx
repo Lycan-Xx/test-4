@@ -97,17 +97,20 @@ const ContactUs = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-12 text-center">
-          <button className="relative bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-md sm:text-lg px-8 py-4 rounded-full shadow-md transition-transform hover:scale-105 hover:from-orange-600 hover:to-orange-700">
-            <span className="flex items-center justify-center gap-2">
-              GET IN TOUCH
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </span>
-          </button>
+
+        {/* Call to Action - Added for better UX */}
+        <div className="mt-16 text-center">
+          <a 
+            href="#contact" 
+            className="inline-flex items-center justify-center px-6 py-3 bg-orange-500 text-white font-medium rounded-full shadow-lg hover:bg-orange-600 transition-all duration-300 hover:shadow-orange-500/30 transform hover:-translate-y-1"
+          >
+            Get In Touch
+            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
         </div>
+
       </div>
     </section>
   );

@@ -55,18 +55,18 @@ const About = () => {
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="pt-4">
-              <button className="group relative bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:from-orange-600 hover:to-orange-700 hover:shadow-xl hover:scale-105 font-lato">
-                <span className="relative z-10 flex items-center space-x-2">
-                  <span>KNOW MORE</span>
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </span>
-                <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-              </button>
-            </div>
+        {/* Call to Action - Added for better UX */}
+        <div className="mt-16 text-center">
+          <a 
+            href="#contact" 
+            className="inline-flex items-center justify-center px-6 py-3 bg-orange-500 text-white font-medium rounded-full shadow-lg hover:bg-orange-600 transition-all duration-300 hover:shadow-orange-500/30 transform hover:-translate-y-1"
+          >
+            Know More
+            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
 
 
           </div>
