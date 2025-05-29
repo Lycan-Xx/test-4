@@ -193,7 +193,7 @@ const Testimonial: React.FC = () => {
              onMouseLeave={() => setIsPaused(false)}>
           
           {/* Navigation Arrows */}
-          <div className="absolute top-1/3 transform -translate-y-1/2 left-[-1rem] flex items-center z-30">
+          <div className="absolute top-1/3 transform -translate-y-1/2 left-[-2cm] flex items-center z-30">
             <button 
               onClick={goToPrev}
               disabled={isAnimating}
@@ -205,7 +205,7 @@ const Testimonial: React.FC = () => {
               </svg>
             </button>
           </div>
-          <div className="absolute top-1/3 transform -translate-y-1/2 right-[-1rem] flex items-center z-30">
+          <div className="absolute top-1/3 transform -translate-y-1/2 right-[-2cm] flex items-center z-30">
             <button 
               onClick={goToNext}
               disabled={isAnimating}

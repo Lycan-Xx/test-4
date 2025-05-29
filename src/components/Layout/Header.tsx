@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import LogoBeeCV from "../../assets/LogoBeeCV.svg";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaBriefcase, FaUserFriends } from "react-icons/fa";
 import { FiChevronDown, FiX } from "react-icons/fi";
@@ -154,15 +153,15 @@ const handleMobileMenuToggle = () => {
     <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link 
+            {/* Logo */}
+            <Link 
             to="/"
             onClick={handleHomeClick}
-            className="inline-flex items-center focus:outline-none focus:ring-2 focus:ring-primary-500"
+            className="inline-flex items-center focus:outline-none focus:ring-2 focus:ring-primary-500 text-[2rem] font-bold"
             aria-label="Home"
-          >
-            <img src={LogoBeeCV} alt="CorporateBee Logo" className="h-8" />
-          </Link>
+            >
+            Corporate<span className="text-orange-500">Bee</span>
+            </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
