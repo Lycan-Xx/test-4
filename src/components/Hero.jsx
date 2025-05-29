@@ -1,5 +1,5 @@
 import React from 'react';
-import cbackground from '../assets/cbackground.jpg';
+import cnBackground from "../assets/cbackground.jpg";
 
 const Hero = () => {
   return (
@@ -9,7 +9,7 @@ const Hero = () => {
         <div 
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.6) 100%), url(${cbackground})`
+            backgroundImage: `linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.6) 100%), url(${cnBackground})`
           }}
         />
         {/* Geometric Overlay Pattern */}
@@ -21,7 +21,7 @@ const Hero = () => {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl">
           {/* Main Heading */}
           <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight mb-8 font-lato">
@@ -35,7 +35,7 @@ const Hero = () => {
 
           {/* Description */}
           <div className="relative mb-12">
-            <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-orange-400 to-orange-600 rounded-full"></div>
+            <div className="absolute -left-2 top-0 w-1 h-full bg-gradient-to-b from-orange-400 to-orange-600 rounded-full"></div>
             <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-3xl font-poppins font-light pl-8">
               At <span className="text-orange-400 font-medium">CorporateBee</span>, we help professionals unlock their potential and businesses scale with strategic, results-driven solutions. Whether you're advancing your career or strengthening your team, we're here to guide your next step with clarity and confidence.
             </p>
@@ -63,8 +63,6 @@ const Hero = () => {
               </svg>
             </a>
           </div>
-
-
         </div>
       </div>
 

@@ -193,7 +193,7 @@ const Testimonial: React.FC = () => {
              onMouseLeave={() => setIsPaused(false)}>
           
           {/* Navigation Arrows */}
-          <div className="absolute inset-y-0 left-0 flex items-center -ml-4 md:-ml-12 z-30">
+          <div className="absolute top-1/3 transform -translate-y-1/2 left-[-1rem] flex items-center z-30">
             <button 
               onClick={goToPrev}
               disabled={isAnimating}
@@ -205,8 +205,7 @@ const Testimonial: React.FC = () => {
               </svg>
             </button>
           </div>
-          
-          <div className="absolute inset-y-0 right-0 flex items-center -mr-4 md:-mr-12 z-30">
+          <div className="absolute top-1/3 transform -translate-y-1/2 right-[-1rem] flex items-center z-30">
             <button 
               onClick={goToNext}
               disabled={isAnimating}
@@ -258,7 +257,7 @@ const Testimonial: React.FC = () => {
       </div>
 
       {/* CSS for animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes slideInRight {
           from { transform: translateX(100%); opacity: 0; }
           to { transform: translateX(0); opacity: 1; }
@@ -293,6 +292,10 @@ const Testimonial: React.FC = () => {
         
         .animate-slide-out-left {
           animation: slideOutLeft 400ms forwards;
+        }
+
+        .testimonial {
+          color: #333;
         }
       `}</style>
     </section>

@@ -79,8 +79,8 @@ const About = () => {
               {/* Main Image Container */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
                 <img
-                  src={aboutImage}
-                  alt="Professional business meeting"
+                  src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                  alt="Corporate team collaboration"
                   className="w-full h-96 lg:h-[500px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
