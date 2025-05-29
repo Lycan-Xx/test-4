@@ -1,4 +1,6 @@
+
 import React from 'react';
+import cooperateCelebration from '../../assets/Cooperatecelebration.jpg';
 
 const icons = {
   phone: (

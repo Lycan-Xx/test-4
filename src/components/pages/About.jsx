@@ -1,13 +1,18 @@
+
 import React from 'react';
+import aboutImage from '../../assets/aboutImages.jpg';
 
 const About = () => {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white py-20 overflow-hidden">
-     
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+
+
+      <div className="container mx-auto px-8 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
+
+
           <div className="space-y-8">
             {/* Section Header */}
             <div className="space-y-4">
@@ -77,7 +82,7 @@ const About = () => {
               {/* Main Image Container */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
                 <img
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                  src={aboutImage}
                   alt="Professional business meeting"
                   className="w-full h-96 lg:h-[500px] object-cover"
                 />
